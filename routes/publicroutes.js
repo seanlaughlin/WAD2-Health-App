@@ -3,6 +3,8 @@ const router = express.Router();
 const controller = require("../controllers/controller.js");
 
 router.get("/", controller.landing_page);
+router.get("/login", controller.login_page);
+router.get("/register", controller.register_page);
 
 router.use(function (req, res) {
   res.status(404);
