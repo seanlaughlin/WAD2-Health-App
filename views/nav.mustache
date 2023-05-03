@@ -22,11 +22,18 @@
       <li class="nav-item">
         <a class="nav-link" href="about">About Us</a>
       </li>
+      {{^loggedIn}}
       <li class="nav-item">
         <a class="nav-link" href="register">Register</a>
       </li>
+      {{/loggedIn}}
       <li class="nav-item">
+        {{^loggedIn}}
         <a class="nav-link" href="login">Login</a>
+        {{/loggedIn}}
+        {{#loggedIn}}
+        <a class="nav-link" href="/auth/logout">Log Out</a>
+        {{/loggedIn}}
       </li>
     </ul>
   </div>

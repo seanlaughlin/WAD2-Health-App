@@ -24,14 +24,20 @@
     "bootstrap"
   ],
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.5",
+    "cookie-session": "^2.0.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "jquery": "^3.6.4",
     "mustache": "^4.2.0",
     "mustache-express": "^1.3.2",
     "nedb": "^1.8.0",
+    "nodemon": "^2.0.22",
+    "passport": "^0.5.3",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-local": "^1.0.0",
     "path": "^0.12.7",
     "start": "^5.1.0"
   }
