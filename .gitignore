@@ -104,6 +104,4 @@ dist
 .tern-port
 
 
-config/keys.js
-
 database/users.db
