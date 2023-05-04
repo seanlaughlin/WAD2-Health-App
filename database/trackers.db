@@ -1,0 +1,3 @@
+{"userId":"Qitkn4KEnhAC3BNk","metric":"Else","unit":"kg","entries":{"date":1683029908272,"value":55},"target":{"date":1683721108272,"measurement":50},"_id":"C2YUBbLhOT3Ki7CJ"}
+{"userId":"Qitkn4KEnhAC3BNk","metric":"Weight","unit":"kg","entries":{"date":1683029784063,"value":55},"target":{"date":1683720984063,"measurement":50},"_id":"apXUyhg2tv1e1pBj"}
+{"$$indexCreated":{"fieldName":"metric","unique":true,"sparse":false}}

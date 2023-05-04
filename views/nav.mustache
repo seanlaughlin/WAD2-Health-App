@@ -20,7 +20,12 @@
         >
       </li>
       <li class="nav-item">
+        {{^loggedIn}}
         <a class="nav-link" href="about">About Us</a>
+        {{/loggedIn}}
+        {{#loggedIn}}
+        <a class="nav-link" href="user">Dashboard</a>
+        {{/loggedIn}}
       </li>
       {{^loggedIn}}
       <li class="nav-item">

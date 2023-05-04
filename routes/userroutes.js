@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const TrackerDao = require("../dao/trackerDao");
 
 const authCheck = (req, res, next) => {
   //it user isn't logged in
@@ -15,6 +16,17 @@ router.get("/", authCheck, (req, res) => {
     title: "Greenfields Health - User Dashboard",
     loggedIn: true,
     name: req.user.name,
+  });
+});
+
+router.get("/weight", authCheck, (req, res) => {
+  const trackerDao = new TrackerDao("./database/trackers.db", req.user._id);
+  trackerDao.findAll().then((tracker) => {
+    try {
+      res.send(tracker);
+    } catch (err) {
+      res.send("error obv");
+    }
   });
 });
 
