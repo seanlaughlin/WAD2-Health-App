@@ -1,43 +1,60 @@
 <html lang="en">
-    <head>
+
+<head>
     {{>header}}
-    </head>
-    <body>
+</head>
+
+<body>
     {{>nav}}
-        <header class="text-center jumbotron bg-image d-flex align-items-center" style="background-image: url('https://brand.assets.adidas.com/f_auto,q_auto,fl_lossy/capi/enUS/Images/2021/10/fw21-cycling-mental-health-header-d_221-792946.jpg'); height: 400px; background-size: cover; background-repeat: no-repeat;">
-            <div class="p-4 bg-light bg-opacity-75 mx-auto rounded">
-                <h1 class="mb-3">Dashboard</h1>
-                <h3>Welcome, {{name}}!</h3>
+    <header class="text-center jumbotron bg-image d-flex align-items-center"
+        style="background-image: url('https://brand.assets.adidas.com/f_auto,q_auto,fl_lossy/capi/enUS/Images/2021/10/fw21-cycling-mental-health-header-d_221-792946.jpg'); height: 400px; background-size: cover; background-repeat: no-repeat;">
+        <div class="p-4 bg-light bg-opacity-75 mx-auto rounded">
+            <h1 class="mb-3">Dashboard</h1>
+            <h3>Welcome, {{name}}!</h3>
+        </div>
+    </header>
+    <main class="container p-3">
+        <section
+            class="d-flex flex-column flex-lg-row gap-3 justify-content-center align-items-lg-stretch align-items-center"
+            id="sectionInfoCards">
+            <div class="card flex-fill d-flex" style="max-width: 20rem;">
+                <img class="card-img-top"
+                    src="https://www.nutrition.org.uk/media/rk4eoex1/balanced-diet_s_1903172290.jpg"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Nutrition & Diet</h5>
+                    <p class="card-text">We provide useful tips and tricks, as well as features that allow you to set
+                        your nutrition and diet goals, log and track your progress towards achieving them.</p>
+                </div>
             </div>
-        </header>
-        <main class="container p-3">
-            <section class="d-flex flex-column flex-lg-row gap-3 justify-content-center align-items-lg-stretch align-items-center" id="sectionInfoCards">
+            <a href="weight">
                 <div class="card flex-fill d-flex" style="max-width: 20rem;">
-                    <img class="card-img-top" src="https://www.nutrition.org.uk/media/rk4eoex1/balanced-diet_s_1903172290.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Nutrition & Diet</h5>
-                        <p class="card-text">We provide useful tips and tricks, as well as features that allow you to set your nutrition and diet goals, log and track your progress towards achieving them.</p>
-                    </div>
-                  </div>
-                  <div class="card flex-fill d-flex" style="max-width: 20rem;">
-                    <img class="card-img-top" src="https://hips.hearstapps.com/hmg-prod/images/mental-fitness-sessions-1674144770.jpg" alt="Card image cap">
+                    <img class="card-img-top"
+                        src="https://hips.hearstapps.com/hmg-prod/images/mental-fitness-sessions-1674144770.jpg"
+                        alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Fitness</h5>
-                        <p class="card-text">In the hustle and bustle of 21st century living, it's easy to lose track of your fitness goals and fall into old habits.
+                        <p class="card-text">In the hustle and bustle of 21st century living, it's easy to lose track of
+                            your fitness goals and fall into old habits.
                             Our fitness tips, tricks and information will help keep you on track. </p>
-                            <p>We also provide facilities to set custom fitness-related goals and log and track your progress towards them.
+                        <p>We also provide facilities to set custom fitness-related goals and log and track your
+                            progress towards them.
                         </p>
                     </div>
-                  </div>
-                  <div class="card flex-fill d-flex" style="max-width: 20rem;">
-                    <img class="card-img-top" src="https://www.thewerklife.com/wp-content/uploads/2019/01/achieve-goals-800x533.jpeg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Lifestyle</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                  </div>
-            </section>
-        </main>
-        {{>footer}}
-    </body
+                </div>
+            </a>
+            <div class="card flex-fill d-flex" style="max-width: 20rem;">
+                <img class="card-img-top"
+                    src="https://www.thewerklife.com/wp-content/uploads/2019/01/achieve-goals-800x533.jpeg"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Lifestyle</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    {{>footer}}
+</body> 
 </html>

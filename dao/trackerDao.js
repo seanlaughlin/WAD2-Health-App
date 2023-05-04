@@ -9,9 +9,11 @@ class TrackerDao {
       autoload: true,
     });
     //Set user id to find their associated trackers
-    this.userId = userId;
-    //prevents multiple trackers being saved with same metric
-    this.db.ensureIndex({ fieldName: "metric", unique: true });
+    this.userId = "";
+  }
+
+  setUserId(id){
+    this.userId = id;
   }
 
   //save new tracker
@@ -55,6 +57,38 @@ class TrackerDao {
       );
     });
   }
+
+  async updateTracker(tracker) {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const existingTracker = await this.findTrackerByMetric(tracker.metric);
+        if (existingTracker) {
+          console.log("existing tracker")
+          this.db.update({ metric: tracker.metric, userId: this.userId }, tracker, {}, (err, numReplaced) => {
+            if (err) {
+              reject(err);
+            } else {
+              resolve(numReplaced);
+            }
+          });
+        } else {
+          this.db.insert(tracker, (err, newTracker) => {
+            console.log(tracker)
+            if (err) {
+              console.log("Duplicate tracker name error.");
+              reject(err);
+            } else {
+              resolve(newTracker);
+            }
+          });
+        }
+      } catch (err) {
+        reject(err);
+      }
+    });
+  }
+
+  
 }
 
 module.exports = TrackerDao;

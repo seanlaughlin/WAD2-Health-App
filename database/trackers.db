@@ -1,3 +1,6 @@
-{"userId":"Qitkn4KEnhAC3BNk","metric":"Else","unit":"kg","entries":{"date":1683029908272,"value":55},"target":{"date":1683721108272,"measurement":50},"_id":"C2YUBbLhOT3Ki7CJ"}
-{"userId":"Qitkn4KEnhAC3BNk","metric":"Weight","unit":"kg","entries":{"date":1683029784063,"value":55},"target":{"date":1683720984063,"measurement":50},"_id":"apXUyhg2tv1e1pBj"}
-{"$$indexCreated":{"fieldName":"metric","unique":true,"sparse":false}}
+{"userId":"4UFmuxxVGO4NApjm","metric":"Else","unit":"kg","entries":[{"date":1683029908272,"value":55}],"target":{"date":1683721108272,"measurement":50},"_id":"C2YUBbLhOT3Ki7CJ"}
+{"userId":"LQEbJb8DpcfMHZTA","entries":[{"value":45,"date":1682899200000}],"metric":"Weight","_id":"JctaRHMDFihWGueR"}
+{"userId":"4UFmuxxVGO4NApjm","metric":"Weight","unit":"kg","entries":[{"date":1680626320000,"value":55},{"date":1683029784063,"value":60},{"date":{"$$date":1682985600000},"value":55},{"date":{"$$date":1683590400000},"value":66},{"date":{"$$date":1683763200000},"value":44},{"date":{"$$date":1682467200000},"value":55},{"date":{"$$date":1684454400000},"value":44},{"date":{"$$date":1678320000000},"value":44},{"date":{"$$date":1684627200000},"value":55}],"target":{"date":1683720984063,"measurement":50},"_id":"apXUyhg2tv1e1pBj"}
+{"userId":"HvDvrfUcNxDjeT6d","entries":[{"value":55,"date":1683072000000},{"date":{"$$date":1683244800000},"value":66}],"metric":"Weight","_id":"hgCCtt32tKY2Btoe"}
+{"userId":"npYkZHK9dCJxafzt","entries":[{"value":55,"date":1683072000000}],"metric":"Weight","_id":"QCJPKm4NolH5hxkI"}
+{"userId":"npYkZHK9dCJxafzt","entries":[{"value":55,"date":1683072000000},{"date":{"$$date":1680048000000},"value":66}],"metric":"Weight","_id":"QCJPKm4NolH5hxkI"}

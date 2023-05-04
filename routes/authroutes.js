@@ -3,7 +3,6 @@ const router = express.Router();
 const controller = require("../controllers/authcontroller.js");
 const passport = require("passport");
 const UserDao = require("../dao/userDao");
-const dao = new UserDao("./database/users.db");
 const bcrypt = require("bcrypt");
 
 //auth routes
@@ -19,14 +18,16 @@ router.get(
 router.post(
   "/local",
   passport.authenticate("local", {
-    successRedirect: "/user",
+    successRedirect: "/user/",
     failureRedirect: "/login",
     failureFlash: true,
   }),
   (req, res) => {
-    res.render("login", {
+    res.render("/login", {
       message: req.flash("message")[0],
     });
+    console.log(req.flash("message")[0])
+    console.log('messahe')
   }
 );
 
@@ -44,9 +45,10 @@ router.post("/register", (req, res) => {
       trackers: new Array(),
       password: hash,
     };
+    const dao = new UserDao(".\\database\\users.db");
     dao.saveUser(user);
     res.cookie("user", user._id);
-    res.redirect("/");
+    res.redirect("/login");
   });
 });
 
@@ -60,7 +62,7 @@ router.get("/logout", (req, res) => {
 // hand control to passport to use code to grab profile info
 router.get("/google/redirect", passport.authenticate("google"), (req, res) => {
   // res.send(req.user);
-  res.redirect("/user");
+  res.redirect("/user/");
 });
 
 module.exports = router;

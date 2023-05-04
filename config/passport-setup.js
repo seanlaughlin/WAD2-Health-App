@@ -5,7 +5,6 @@ const bcrypt = require("bcrypt");
 const keys = require("./keys");
 const UserDao = require("../dao/userDao");
 const User = require("../models/User");
-const dao = new UserDao("./database/users.db");
 
 //Serialise via user object identifier
 passport.serializeUser((user, done) => {
@@ -14,6 +13,7 @@ passport.serializeUser((user, done) => {
 
 //Deserialise user from id
 passport.deserializeUser((id, done) => {
+  const dao = new UserDao(".\\database\\users.db");
   dao.findUserById(id).then((user) => {
     done(null, user);
   });
@@ -30,6 +30,7 @@ passport.use(
     },
     (accessToken, refreshToken, profile, done) => {
       profile = profile._json;
+      const dao = new UserDao(".\\database\\users.db");
       //check if user exists and load
       dao.findUserByGoogleId(profile.sub).then((currentUser) => {
         if (currentUser) {
@@ -60,6 +61,7 @@ passport.use(
   new LocalStrategy(
     { usernameField: "email", passwordField: "password" },
     async (email, password, done) => {
+      const dao = new UserDao(".\\database\\users.db");
       try {
         // Check if the email is valid and load the user
         const user = await dao.findUserByEmail(email);

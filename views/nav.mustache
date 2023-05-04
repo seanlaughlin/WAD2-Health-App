@@ -21,20 +21,20 @@
       </li>
       <li class="nav-item">
         {{^loggedIn}}
-        <a class="nav-link" href="about">About Us</a>
+        <a class="nav-link" href="/about">About Us</a>
         {{/loggedIn}}
         {{#loggedIn}}
-        <a class="nav-link" href="user">Dashboard</a>
+        <a class="nav-link" href="/user/">Dashboard</a>
         {{/loggedIn}}
       </li>
       {{^loggedIn}}
       <li class="nav-item">
-        <a class="nav-link" href="register">Register</a>
+        <a class="nav-link" href="/register">Register</a>
       </li>
       {{/loggedIn}}
       <li class="nav-item">
         {{^loggedIn}}
-        <a class="nav-link" href="login">Login</a>
+        <a class="nav-link" href="/login">Login</a>
         {{/loggedIn}}
         {{#loggedIn}}
         <a class="nav-link" href="/auth/logout">Log Out</a>
