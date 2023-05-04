@@ -8,6 +8,9 @@
   >
     {{>nav}}
     <main class="container my-auto">
+      {{#message}}
+      <p>{{ message }}</p>
+      {{/message}}
       {{>loginform}}
     </main>
     {{>footer}}

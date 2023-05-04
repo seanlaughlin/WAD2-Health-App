@@ -55,34 +55,34 @@ passport.use(
   )
 );
 
-//local login strategy using bcrypt
+// Set up the local strategy for Passport.js
 passport.use(
   new LocalStrategy(
-    {
-      usernameField: "username",
-      passwordField: "password",
-      nameField: "name",
-    },
-    (email, password, done) => {
-      dao.findUserByEmail(email).then((user) => {
-        if (user) {
-          bcrypt.compare(password, user.password, function (err, result) {
-            if (err) {
-              return done(err);
-            }
-            if (!result) {
-              return done(null, false);
-            }
-            if (user.googleId)
-              return done(null, false, {
-                message:
-                  "Account already exists. Please sign in with your Google account.",
-              });
-          });
-          console.log(user);
-          return done(null, user);
+    { usernameField: "email", passwordField: "password" },
+    async (email, password, done) => {
+      try {
+        // Check if the email is valid and load the user
+        const user = await dao.findUserByEmail(email);
+        if (!user) {
+          return done(null, false, { message: "Incorrect email." });
         }
-      });
+        if (user.googleId) {
+          return done(null, false, {
+            message: "Account already exists. Please log in with Google.",
+          });
+        }
+
+        // Compare the password hash
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) {
+          return done(null, false, { message: "Incorrect password." });
+        }
+
+        // Return the user if authenticated
+        return done(null, user);
+      } catch (err) {
+        return done(err);
+      }
     }
   )
 );

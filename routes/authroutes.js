@@ -16,21 +16,21 @@ router.get(
   })
 );
 
-//NOT WORKING
 router.post(
   "/local",
   passport.authenticate("local", {
     successRedirect: "/user",
-    failureRedirect: "/",
+    failureRedirect: "/login",
+    failureFlash: true,
   }),
   (req, res) => {
-    const { user } = req.body;
-    res.cookie("user", user);
-    res.redirect("/user");
+    res.render("login", {
+      message: req.flash("message")[0],
+    });
   }
 );
 
-//WORKING
+//Register route for local auth
 router.post("/register", (req, res) => {
   const { email, password, name } = req.body;
   bcrypt.hash(password, 10, (err, hash) => {

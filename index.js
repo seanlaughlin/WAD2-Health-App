@@ -2,8 +2,10 @@ const express = require("express");
 const app = express();
 const passportSetup = require("./config/passport-setup");
 const cookieSession = require("cookie-session");
+const cookieParser = require("cookie-parser");
 const keys = require("./config/keys");
 const passport = require("passport");
+const flash = require("connect-flash");
 require("dotenv").config();
 
 app.use(
@@ -23,6 +25,8 @@ app.use(
 //init passport and session cookies
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(cookieParser());
+app.use(flash());
 
 const path = require("path");
 const public = path.join(__dirname, "public");
