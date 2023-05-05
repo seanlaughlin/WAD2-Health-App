@@ -1,45 +1,43 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand mx-4" href="/">Greenfields</a>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-bs-toggle="collapse"
-    data-bs-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ms-lg-auto ms-2">
+      {{^loggedIn}}
       <li class="nav-item active">
-        <a class="nav-link active" aria-current="page" href="/"
-          >Home <span class="visually-hidden">(current)</span></a
-        >
+        <a class="nav-link active" aria-current="page" href="/">Home <span class="visually-hidden">(current)</span></a>
       </li>
       <li class="nav-item">
-        {{^loggedIn}}
         <a class="nav-link" href="/about">About Us</a>
-        {{/loggedIn}}
-        {{#loggedIn}}
-        <a class="nav-link" href="/user/">Dashboard</a>
-        {{/loggedIn}}
       </li>
-      {{^loggedIn}}
       <li class="nav-item">
         <a class="nav-link" href="/register">Register</a>
       </li>
-      {{/loggedIn}}
       <li class="nav-item">
-        {{^loggedIn}}
         <a class="nav-link" href="/login">Login</a>
-        {{/loggedIn}}
-        {{#loggedIn}}
-        <a class="nav-link" href="/auth/logout">Log Out</a>
-        {{/loggedIn}}
       </li>
+      {{/loggedIn}}
+      {{#loggedIn}}
+      <li class="nav-item">
+        <a class="nav-link" href="/user/">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="nutrition">Nutrition & Diet</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="fitness">Fitness</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="lifestyle">Lifestyle</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/auth/logout">Log Out</a>
+      </li>
+      {{/loggedIn}}
     </ul>
   </div>
 </nav>

@@ -1,0 +1,22 @@
+<div class="border rounded p-2">
+    <h4 class="text-center mb-3">Submit {{metric}}</h4>
+    <form id="metric-submit-form">
+        <input type="hidden" name="metric" id="metric" value="{{metric}}">
+        <div class="mb-3">
+            <input type="text" class="form-control" id="date-input" name="date" placeholder="Date"
+                onfocus="(this.type = 'date')" required>
+        </div>
+        <div class="mb-3">
+            <input type="number" class="form-control" id="metric-input" name="value"
+                placeholder="{{#units}}({{units}}){{/units}}"
+                step="0.1" required>
+        </div>
+        {{^data}}
+        <div class="mb-3">
+            <input type="text" class="form-control" id="units-input" name="units" placeholder="Units"
+                required>
+        </div>
+        {{/data}}
+        <button type="submit" class="btn btn-dark w-100">Submit</button>
+    </form>
+</div>

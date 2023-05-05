@@ -1,0 +1,80 @@
+<html lang="en">
+
+<head>
+    {{>header}}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2/dist/chart.min.js"></script>
+    <script src="../js/chartsubmission.js" defer></script>
+    <script src="../js/targetsubmission.js" defer></script>
+    <script src="../js/markgoalachieved.js" defer></script>
+    <script src="../js/deletegoal.js" defer></script>
+</head>
+
+<body class="min-vh-100 d-flex flex-column" style="background-image: url('../images/pattern-bg.png')">
+    {{>nav}}
+    <header class="text-center jumbotron bg-image d-flex align-items-center"
+        style="background-image: url('https://brand.assets.adidas.com/f_auto,q_auto,fl_lossy/capi/enUS/Images/2021/10/fw21-cycling-mental-health-header-d_221-792946.jpg'); height: 250px; background-size: cover; background-repeat: no-repeat;">
+        <div class="p-4 bg-light bg-opacity-75 mx-auto rounded">
+            <h1 class="mb-3">{{metric}} Tracker</h1>
+        </div>
+    </header>
+    <main class="container p-3 bg-light col-md-7">
+        <div class="d-flex flex-column justify-content-center gap-2">
+            <div class="d-flex flex-column flex-md-row gap-2 justify-content-center">
+                <div class="border rounded p-2 w-75">
+                    {{^goals}}
+                    <h4 class="text-center mb-3">Set a new goal</h4>
+                    <form id="metric-goal-form">
+                        <input type="hidden" name="metric" id="goal-metric" value="{{metric}}">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="goal-date" name="date" placeholder="Date"
+                                onfocus="(this.type = 'date')" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="number" class="form-control" id="goal-value" name="value" step="0.1"
+                                placeholder="{{#metric}}{{metric}}{{/metric}}{{^metric}}Value{{/metric}}{{#units}} ({{units}}){{/units}}"
+                                required>
+                        </div>
+                        {{^data}}
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="goal-units" name="units" placeholder="Units"
+                                required>
+                        </div>
+                        {{/data}}
+                        <button type="submit" class="btn btn-dark w-100">Submit</button>
+                    </form>
+                    {{/goals}}
+                    {{#goals}}
+                    <div class="text-center mb-3 w-100">
+                        <h4>Current Goal</h4>
+                         <input type="hidden" name="metric" id="goal-metric" value="{{metric}}">
+                        <div class="progress col-md-8 mx-auto border border-dark" style="height: 25px">
+                            <div class="progress-bar progress-bar-striped {{#goalAchieved}}bg-success{{/goalAchieved}} progress-bar-animated"
+                                role="progressbar" aria-valuenow="{{totalSubmissionValues}}" aria-valuemin="0"
+                                aria-valuemax="100" style="width: {{percentageComplete}}%">
+                                {{percentageComplete}}%
+                            </div>
+                        </div>
+                        <p class="p-2">You're aiming for <b><span id="goal-value">{{value}}</span> {{units}}</b> <br>by <br><span id="goal-date">{{date}}</span>
+                            {{#overdue}}<span class="text-danger">(overdue)</span>{{/overdue}}</p>
+                        {{#lastSubmission}}
+                        <p>Currently at: <b>{{totalSubmissionValues}} {{units}}</b></p>
+                        {{/lastSubmission}}
+                        {{#goalAchieved}}
+                        <h4>Well done, you've achieved your goal!</h4>
+                        <button class="btn btn-success my-2" id="mark-achieved">Mark as Complete</button>
+                        {{/goalAchieved}}
+                    </div>
+                    {{/goals}}
+                </div>
+                {{#goals}}
+                    <span>{{>user/tracker/submitentry}}</span>
+                {{/goals}}
+
+            </div>
+            {{>user/tracker/entriesgoalstables}}
+        </div>
+    </main>
+    {{>footer}}
+</body>
+
+</html>

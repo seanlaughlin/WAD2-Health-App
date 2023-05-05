@@ -11,14 +11,14 @@ form.addEventListener('submit', async function (e) {
     }
     console.log(data)
 
-    // Send an AJAX POST request to the server to submit the data
+    // Send an AJAX POST request to the server to submit the tracker data
     const xhr = new XMLHttpRequest();
     xhr.open('POST', '/user/tracker/create');
     xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
     xhr.onload = function () {
         if (xhr.status === 200) {
-            // Reload the page to update the chart with the new data
-            location.reload();
+            // send to chart page
+            window.location.href = (`/user/tracker?metric=${data.metric}`);
         } else {
             console.log('Error:', xhr.responseText);
         }

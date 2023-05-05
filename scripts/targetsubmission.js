@@ -1,7 +1,7 @@
 const goalForm = document.getElementById("metric-goal-form");
 
-goalForm.addEventListener("submit", (event) => {
-  event.preventDefault();
+goalForm.addEventListener("submit", (e) => {
+  e.preventDefault();
 
   const metric = document.getElementById('goal-metric').value;
   const value = document.getElementById('goal-value').value;

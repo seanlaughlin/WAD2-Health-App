@@ -1,0 +1,41 @@
+<div class="d-flex flex-row justify-content-center w-100 gap-2">
+    <div class="border rounded p-2 w-50 text-center">
+        <h4>Goals Achieved</h4>
+        <table class="table table-striped text-center mx-auto">
+            <thead class="table-dark">
+                <tr>
+                    <th>Date Achieved</th>
+                    <th>{{metric}} ({{units}})</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#goalsAchieved}}
+                <tr>
+                    <td>{{achievedDate}}</td>
+                    <td>{{value}}</td>
+                </tr>
+                {{/goalsAchieved}}
+            </tbody>
+        </table>
+
+    </div>
+    <div class="border rounded p-2 w-50 text-center">
+        <h4>Entries Recorded</h4>
+        <table class="table table-striped text-center mx-auto">
+            <thead class="table-dark">
+                <tr>
+                    <th>Date</th>
+                    <th>Entry</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#entries}}
+                <tr>
+                    <td>{{date}}</td>
+                    <td>{{value}}</td>
+                </tr>
+                {{/entries}}
+            </tbody>
+        </table>
+    </div>
+</div>

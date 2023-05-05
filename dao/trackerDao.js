@@ -22,6 +22,7 @@ class TrackerDao {
       this.db.insert(tracker, (err, newTracker) => {
         if (err) {
           console.log("Duplicate tracker error.");
+          console.log(err)
         } else {
           resolve(newTracker);
         }
@@ -58,38 +59,66 @@ class TrackerDao {
     });
   }
 
-  async updateTracker(tracker) {
-  return new Promise(async (resolve, reject) => {
-    try {
-      const existingTracker = await this.findTrackerByMetric(tracker.metric);
-      if (existingTracker) {
-        console.log("Updating existing tracker.")
-        this.db.update({ metric: tracker.metric, userId: this.userId }, tracker, {}, (err, numReplaced) => {
-          if (err) {
-            reject(err);
-          } else {
-            resolve(numReplaced);
-            console.log("Existing tracker updated.")
-          }
-        });
-      } else {
-        this.db.insert(tracker, (err, newTracker) => {
-          console.log(tracker)
-          if (err) {
-            console.log("Duplicate tracker error.");
-            reject(err);
-          } else {
-            resolve(newTracker);
-          }
-        });
-      }
-    } catch (err) {
-      reject(err);
-    }
-  });
-}
+  async findTrackersByCategory(category) {
+    return new Promise((resolve, reject) => {
+      this.db.find({ userId: this.userId, type: this.type }, (err, trackers) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(trackers);
+        }
+      });
+    });
+  }
 
-  
+  async updateTracker(tracker) {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const existingTracker = await this.findTrackerByMetric(tracker.metric);
+        if (existingTracker) {
+          console.log("Updating existing tracker.")
+          this.db.update({ metric: tracker.metric, userId: this.userId }, tracker, {}, (err, numReplaced) => {
+            if (err) {
+              reject(err);
+            } else {
+              resolve(numReplaced);
+              console.log("Existing tracker updated.")
+            }
+          });
+        } else {
+          this.db.insert(tracker, (err, newTracker) => {
+            console.log(tracker)
+            if (err) {
+              console.log("Duplicate tracker error.");
+              reject(err);
+            } else {
+              resolve(newTracker);
+            }
+          });
+        }
+      } catch (err) {
+        reject(err);
+      }
+    });
+  }
+
+  //Delete a goal from a tracker
+  async deleteGoalFromTracker(metric) {
+    return new Promise((resolve, reject) => {
+      this.db.update(
+        { metric: metric, 'goals.isAchieved': false },
+        { $pull: { goals: { isAchieved: false } } },
+        { multi: true },
+        (err, numAffected) => {
+          if (err) {
+            reject(err);
+          } else {
+            resolve(numAffected);
+          }
+        }
+      );
+    });
+  }
 }
 
 module.exports = TrackerDao;
