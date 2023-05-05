@@ -2,6 +2,7 @@
 
 <head>
     {{>header}}
+    <script src="{{{path.join(__dirname, 'scripts', 'createtracker.js')}}}" defer></script>
 </head>
 
 <body>
@@ -25,9 +26,14 @@
                     <h5 class="card-title">Nutrition & Diet</h5>
                     <p class="card-text">We provide useful tips and tricks, as well as features that allow you to set
                         your nutrition and diet goals, log and track your progress towards achieving them.</p>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Add new Tracker
+                    </button>
+                    {{>user/newtrackerform}}
                 </div>
             </div>
-            <a href="weight">
+            <a href="tracker?metric=Weight">
                 <div class="card flex-fill d-flex" style="max-width: 20rem;">
                     <img class="card-img-top"
                         src="https://hips.hearstapps.com/hmg-prod/images/mental-fitness-sessions-1674144770.jpg"
@@ -56,5 +62,6 @@
         </section>
     </main>
     {{>footer}}
-</body> 
+</body>
+
 </html>

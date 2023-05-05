@@ -1,0 +1,47 @@
+<script src="../js/createtracker.js" defer></script>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <form id="create-tracker-form">
+                <div class="mb-3">
+                    <label for="metric" class="form-label">Metric</label>
+                    <input type="text" class="form-control" id="metric" name="metric" required maxlength="30">
+                </div>
+
+                <div class="mb-3">
+                    <label for="units" class="form-label">Units</label>
+                    <input type="text" class="form-control" id="units" name="units" required maxlength="10">
+                </div>
+
+                <div class="mb-3">
+                    <label for="category" class="form-label">Category</label>
+                    <select class="form-select" id="category" name="category" required>
+                        <option value="Nutrition and Diet">Nutrition and Diet</option>
+                        <option value="Fitness">Fitness</option>
+                        <option value="Lifestyle">Lifestyle</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="trackerType" class="form-label">Tracker Type</label>
+                    <select class="form-select" id="trackerType" name="trackerType" required>
+                        <option value="generic">Generic</option>
+                        <option value="chart">Line Chart</option>
+                        <option value="pbar">Progress Bar</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Create Tracker</button>
+            </form>
+            </body>
+        </div>
+    </div>
+</div>

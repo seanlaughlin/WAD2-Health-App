@@ -1,6 +1,8 @@
-{"userId":"4UFmuxxVGO4NApjm","metric":"Else","unit":"kg","entries":[{"date":1683029908272,"value":55}],"target":{"date":1683721108272,"measurement":50},"_id":"C2YUBbLhOT3Ki7CJ"}
-{"userId":"LQEbJb8DpcfMHZTA","entries":[{"value":45,"date":1682899200000}],"metric":"Weight","_id":"JctaRHMDFihWGueR"}
-{"userId":"4UFmuxxVGO4NApjm","metric":"Weight","unit":"kg","entries":[{"date":1680626320000,"value":55},{"date":1683029784063,"value":60},{"date":{"$$date":1682985600000},"value":55},{"date":{"$$date":1683590400000},"value":66},{"date":{"$$date":1683763200000},"value":44},{"date":{"$$date":1682467200000},"value":55},{"date":{"$$date":1684454400000},"value":44},{"date":{"$$date":1678320000000},"value":44},{"date":{"$$date":1684627200000},"value":55}],"target":{"date":1683720984063,"measurement":50},"_id":"apXUyhg2tv1e1pBj"}
-{"userId":"HvDvrfUcNxDjeT6d","entries":[{"value":55,"date":1683072000000},{"date":{"$$date":1683244800000},"value":66}],"metric":"Weight","_id":"hgCCtt32tKY2Btoe"}
-{"userId":"npYkZHK9dCJxafzt","entries":[{"value":55,"date":1683072000000}],"metric":"Weight","_id":"QCJPKm4NolH5hxkI"}
-{"userId":"npYkZHK9dCJxafzt","entries":[{"value":55,"date":1683072000000},{"date":{"$$date":1680048000000},"value":66}],"metric":"Weight","_id":"QCJPKm4NolH5hxkI"}
+{"userId":"n1KdTQKDmfsqnq5P","metric":"dsf","category":"Nutrition and Diet","type":"Generic","units":"kg","entries":[],"goals":[],"_id":"0TvOhNq49aFP7rm9"}
+{"userId":"n1KdTQKDmfsqnq5P","metric":"dsff","category":"Nutrition and Diet","type":"chart","units":"lbs","entries":[],"goals":[],"_id":"0yOfMjinUdoLi87d"}
+{"userId":"n1KdTQKDmfsqnq5P","metric":"dee","category":"Nutrition and Diet","type":"Generic","units":"kg","entries":[{"date":{"$$date":1683072000000},"value":55},{"date":{"$$date":1684627200000},"value":60}],"goals":[{"date":{"$$date":1683072000000},"value":55}],"_id":"ZbNMd4DrJYcryFvd"}
+{"userId":"n1KdTQKDmfsqnq5P","metric":"Weight","category":"Nutrition and Diet","type":"Generic","units":"KG","entries":[],"goals":[],"_id":"t6aeFoI00zClMTI2"}
+{"userId":"n1KdTQKDmfsqnq5P","metric":"dsff","category":"Nutrition and Diet","type":"chart","units":"lbs","entries":[],"goals":[{"date":{"$$date":1683072000000},"value":55}],"_id":"0yOfMjinUdoLi87d"}
+{"userId":"n1KdTQKDmfsqnq5P","metric":"dsff","category":"Nutrition and Diet","type":"chart","units":"lbs","entries":[{"date":{"$$date":1683072000000},"value":66}],"goals":[{"date":{"$$date":1683072000000},"value":55}],"_id":"0yOfMjinUdoLi87d"}
+{"userId":"n1KdTQKDmfsqnq5P","metric":"dsff","category":"Nutrition and Diet","type":"chart","units":"lbs","entries":[{"date":{"$$date":1683072000000},"value":66},{"date":{"$$date":1683676800000},"value":77}],"goals":[{"date":{"$$date":1683072000000},"value":55}],"_id":"0yOfMjinUdoLi87d"}
+{"userId":"n1KdTQKDmfsqnq5P","metric":"sean","category":"Nutrition and Diet","type":"chart","units":"11","entries":[],"goals":[],"_id":"2oDR9dXIRIHSFLxI"}

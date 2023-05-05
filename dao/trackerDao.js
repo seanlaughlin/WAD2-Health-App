@@ -12,7 +12,7 @@ class TrackerDao {
     this.userId = "";
   }
 
-  setUserId(id){
+  setUserId(id) {
     this.userId = id;
   }
 
@@ -21,7 +21,7 @@ class TrackerDao {
     return new Promise((resolve, reject) => {
       this.db.insert(tracker, (err, newTracker) => {
         if (err) {
-          console.log("Duplicate tracker name error.");
+          console.log("Duplicate tracker error.");
         } else {
           resolve(newTracker);
         }
@@ -59,34 +59,35 @@ class TrackerDao {
   }
 
   async updateTracker(tracker) {
-    return new Promise(async (resolve, reject) => {
-      try {
-        const existingTracker = await this.findTrackerByMetric(tracker.metric);
-        if (existingTracker) {
-          console.log("existing tracker")
-          this.db.update({ metric: tracker.metric, userId: this.userId }, tracker, {}, (err, numReplaced) => {
-            if (err) {
-              reject(err);
-            } else {
-              resolve(numReplaced);
-            }
-          });
-        } else {
-          this.db.insert(tracker, (err, newTracker) => {
-            console.log(tracker)
-            if (err) {
-              console.log("Duplicate tracker name error.");
-              reject(err);
-            } else {
-              resolve(newTracker);
-            }
-          });
-        }
-      } catch (err) {
-        reject(err);
+  return new Promise(async (resolve, reject) => {
+    try {
+      const existingTracker = await this.findTrackerByMetric(tracker.metric);
+      if (existingTracker) {
+        console.log("Updating existing tracker.")
+        this.db.update({ metric: tracker.metric, userId: this.userId }, tracker, {}, (err, numReplaced) => {
+          if (err) {
+            reject(err);
+          } else {
+            resolve(numReplaced);
+            console.log("Existing tracker updated.")
+          }
+        });
+      } else {
+        this.db.insert(tracker, (err, newTracker) => {
+          console.log(tracker)
+          if (err) {
+            console.log("Duplicate tracker error.");
+            reject(err);
+          } else {
+            resolve(newTracker);
+          }
+        });
       }
-    });
-  }
+    } catch (err) {
+      reject(err);
+    }
+  });
+}
 
   
 }
