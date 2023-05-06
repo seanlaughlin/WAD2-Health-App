@@ -2,7 +2,6 @@ const Datastore = require("nedb");
 
 class UserDao {
   constructor(dbFilepath) {
-    console.log(dbFilepath);
     this.db = new Datastore({
       filename: dbFilepath,
       autoload: true,

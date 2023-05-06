@@ -1,7 +1,7 @@
   const markAchievedBtn = document.getElementById('mark-achieved');
   markAchievedBtn.addEventListener('click', () => {
     // get the data from the page
-    const metric = document.getElementById('goal-metric').value;
+    const goalId = document.getElementById('goal-id').value;
     const isAchieved = true;
     const achievedDate = parseInt(new Date().getTime());
 
@@ -19,5 +19,5 @@
         }
       }
     };
-    xhr.send(JSON.stringify({ metric, isAchieved, achievedDate }));
+    xhr.send(JSON.stringify({ goalId, isAchieved, achievedDate }));
   });

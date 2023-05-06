@@ -3,7 +3,6 @@ const Tracker = require("../models/Tracker");
 
 class TrackerDao {
   constructor(dbFilepath, userId) {
-    console.log(dbFilepath);
     this.db = new Datastore({
       filename: dbFilepath,
       autoload: true,
@@ -59,6 +58,7 @@ class TrackerDao {
     });
   }
 
+  //Returns trackers of category (nutrition and diet, fitness, lifestyle)
   async findTrackersByCategory(category) {
     return new Promise((resolve, reject) => {
       this.db.find({ userId: this.userId, type: this.type }, (err, trackers) => {
@@ -71,6 +71,7 @@ class TrackerDao {
     });
   }
 
+  //Update tracker, found by metric and userId
   async updateTracker(tracker) {
     return new Promise(async (resolve, reject) => {
       try {
@@ -118,6 +119,17 @@ class TrackerDao {
         }
       );
     });
+  }
+
+  //Used to delete all entries for a tracker, by user request or upon marking a progress tracker goal as achieved
+  async clearTrackerEntries(trackerId) {
+    try {
+      const numUpdated = await this.db.update({ _id: trackerId }, { $set: { entries: [] } }, {});
+      return numUpdated;
+    } catch (err) {
+      console.error(err);
+      throw err;
+    }
   }
 }
 

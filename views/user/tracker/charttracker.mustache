@@ -7,6 +7,7 @@
     <script src="../js/targetsubmission.js" defer></script>
     <script src="../js/markgoalachieved.js" defer></script>
     <script src="../js/deletegoal.js" defer></script>
+    <script src="../js/editgoal.js" defer></script>
 </head>
 
 <body class="min-vh-100 d-flex flex-column" style="background-image: url('../images/pattern-bg.png')">
@@ -17,6 +18,7 @@
             <h1 class="mb-3">{{metric}} Tracker</h1>
         </div>
     </header>
+    {{>user/tracker/goaldeletemodal}}
     <main class="container p-3 bg-light col-md-7">
         <div class="d-flex flex-column justify-content-center gap-2">
             <div class="d-flex flex-column flex-md-row justify-content-center gap-2">
@@ -32,6 +34,8 @@
                         <h4 class="text-center mb-3">Set a new goal</h4>
                         <form id="metric-goal-form">
                             <input type="hidden" name="metric" id="goal-metric" value="{{metric}}">
+                            <input type="hidden" name="goalId" id="goal-id" value="{{_id}}">
+                            
                             <div class="mb-3">
                                 <input type="text" class="form-control" id="goal-date" name="date" placeholder="Date"
                                     onfocus="(this.type = 'date')" required>
@@ -41,32 +45,43 @@
                                     placeholder="{{#metric}}{{metric}}{{/metric}}{{^metric}}Value{{/metric}}{{#units}} ({{units}}){{/units}}"
                                     required>
                             </div>
-                            {{^data}}
-                            <div class="mb-3">
-                                <input type="text" class="form-control" id="goal-units" name="units" placeholder="Units"
-                                    required>
-                            </div>
-                            {{/data}}
                             <button type="submit" class="btn btn-dark w-100">Submit</button>
                         </form>
                         {{/goals}}
                         {{#goals}}
-                        <div class="text-center mb-3">
-                            <h4>Current Goal</h4>
-                            <p class="p-2">You're aiming for <b><span class="goal-value">{{value}}</span> {{units}}</b>
-                                <br>by <br><span id="goal-date">{{date}}</span> {{#overdue}}<span
-                                    class="text-danger">(overdue)</span>{{/overdue}}
-                            </p>
-                            {{#lastSubmission}}
-                            <p>Currently at: <b>{{lastSubmission}} {{units}}</b></p>
-                            {{/lastSubmission}}
-                            <input type="hidden" name="metric" id="goal-metric" value="{{metric}}">
-                            <div class="d-flex flex-row justify-content-center">
-                                <button class="btn btn-sm btn-outline-success my-2 mx-1" id="mark-achieved"><small>Completed</small></button>
-                                <button class="btn btn-sm btn-outline-primary my-2 mx-1" id="modify-goal"><small>Edit</small></button>
-                                <button class="btn btn-sm btn-outline-danger my-2 mx-1" id="delete-goal"><small>Delete</small></button>
-                            </div>
+                        <div id="goal">
+                            <div class="text-center mb-3" id="goal-info">
+                                <h4>Current Goal</h4>
+                                <p class="p-2">You're aiming for <b><span id="goal-value">{{value}}</span> {{units}}</b>
+                                    <br>by <br><span id="goal-date">{{date}}</span> {{#overdue}}<span
+                                        class="text-danger">(overdue)</span>{{/overdue}}
+                                </p>
+                                {{#lastSubmission}}
+                                <p>Currently at: <b>{{lastSubmission}} {{units}}</b></p>
+                                {{/lastSubmission}}
+                                <input type="hidden" name="metric" id="goal-metric" value="{{metric}}">
+                                <input type="hidden" name="goalId" id="goal-id" value="{{_id}}">
+                                <div class="d-flex flex-row justify-content-center">
+                                    <button class="btn btn-sm btn-outline-success my-2 mx-1"
+                                        id="mark-achieved"><small>Completed</small></button>
+                                    <button class="btn btn-sm btn-outline-primary my-2 mx-1"
+                                        id="edit-goal"><small>Edit</small></button>
+                                    <button class="btn btn-sm btn-outline-danger my-2 mx-1" data-bs-toggle="modal"
+                                        data-bs-target="#deleteConfirmationModal"><small>Delete</small></button>
+                                </div>
 
+                            </div>
+                            <div class="text-center mb-3" id="goal-edit-form" style="display: none;">
+                                <h4>Edit Goal</h4>
+                                <div class="mb-3">
+                                    <input type="date" class="form-control" id="goal-date-input" placeholder="Date">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="number" class="form-control" id="goal-value-input" placeholder="Value ({{units}})">
+                                </div>
+                                <button class="btn btn-sm btn-primary" id="update-goal">Update</button>
+                                <button class="btn btn-sm btn-secondary" id="cancel-edit">Cancel</button>
+                            </div>
                         </div>
                         {{/goals}}
                     </div>

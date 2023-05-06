@@ -21,14 +21,7 @@ router.post(
     successRedirect: "/user/",
     failureRedirect: "/login",
     failureFlash: true,
-  }),
-  (req, res) => {
-    res.render("/login", {
-      message: req.flash("message")[0],
-    });
-    console.log(req.flash("message")[0])
-    console.log('messahe')
-  }
+  })
 );
 
 //Register route for local auth

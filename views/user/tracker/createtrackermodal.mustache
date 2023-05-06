@@ -1,0 +1,244 @@
+<style>
+    .section {
+        flex: 0 0 auto;
+        background-color: #f5f5f5;
+    }
+
+    .scroll-nav {
+        margin-bottom: 20px;
+        white-space: nowrap;
+        overflow-x: auto;
+    }
+
+    .scroll-link {
+        display: inline-block;
+        padding: 5px 10px;
+        margin-right: 10px;
+        color: #333;
+        text-decoration: none;
+    }
+
+    .scroll-link:hover {
+        text-decoration: underline;
+    }
+
+    .form-check-input {
+        position: absolute;
+        top: -9999px;
+    }
+
+    .form-check-label {
+        display: inline-block;
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+
+    .radio-image {
+        border: 2px solid transparent;
+        border-radius: 5px;
+        /* Add border to the image */
+        transition: border-color 0.3s;
+        /* Add transition for smooth effect */
+    }
+
+    .radio-image:hover,
+    .form-check-input:checked+.form-check-label .radio-image {
+        border-color: #333;
+        /* Dark color for border */
+    }
+
+    .radio-image:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        border: 2px solid #ccc;
+        /* Border style for unselected image */
+        border-radius: 50%;
+    }
+
+    .form-check-input:checked+.form-check-label .radio-image:before {
+        border-color: #f00;
+        /* Border color for selected image */
+    }
+
+    .custom-input {
+        border: none;
+        border-bottom: 1px solid #ccc;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0;
+        height: auto;
+        background-color: transparent;
+        width: 100%;
+        text-align: center;
+        font-size: x-large;
+    }
+
+    .custom-input:focus {
+        outline: none;
+        border-color: #6c757d;
+    }
+</style>
+<script src="../js/createtracker.js" defer></script>
+<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#create-tracker-modal">
+    Create a Goal Tracker
+</button>
+
+<div class="modal fade" id="create-tracker-modal" tabindex="-1" aria-labelledby="create-tracker-modal-label"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl text-center">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="create-tracker-modal-label">Create a Goal Tracker</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body overflow-hidden m-0 p-0">
+                <form class="container-fluid m-0 p-0" id="create-tracker-form">
+                    <div class="scroll-container d-flex m-0 p-0">
+                        <div id="section1" class="section w-100 d-flex flex-column justify-content-center align-items-center p-3 border">
+                            <h3>Select a Category</h3>
+                            <p>Select from below which category your goal fits in to best: </p>
+                            <div class="d-flex flex-column flex-md-row gap-4 justify-content-center mb-3 mx-auto"
+                                id="category-options">
+                                <div class="form-check p-0">
+                                    <input class="form-check-input" type="radio" name="category"
+                                        id="nutrition-radio" value="Nutrition and Diet" required>
+                                    <label class="form-check-label p-0 mx-auto" for="nutrition-radio">
+                                        <img src="/images/nutrition-select.png"
+                                            alt="Option to select Nutrition & Diet category" class="radio-image"
+                                            style="max-width: 250px">
+                                        <h4>Nutrition & Diet</h4>
+                                    </label>
+                                </div>
+                                <div class="form-check p-0">
+                                    <input class="form-check-input" type="radio" name="category"
+                                        id="fitness-radio" value="Fitness" required>
+                                    <label class="form-check-label p-0 mx-auto" for="fitness-radio">
+                                        <img src="/images/fitness-select.png" alt="Option to select Fitness category"
+                                            class="radio-image" style="max-width: 250px">
+                                        <h4>Fitness</h4>
+                                    </label>
+                                </div>
+
+                                <div class="form-check p-0">
+                                    <input class="form-check-input" type="radio" name="category"
+                                        id="lifestyle-radio" value="Lifestyle" required>
+                                    <label class="form-check-label p-0 mx-auto" for="lifestyle-radio">
+                                        <img src="/images/lifestyle-select.png"
+                                            alt="Option to select Lifestyle category" class="radio-image"
+                                            style="max-width: 250px">
+                                        <h4>Lifestyle</h4>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="modal-nav" class="mt-auto">
+                                <a class="scroll-link mx-0" href="#section2">Next &#x2192;</a>
+                            </div>
+                        </div>
+                        <div id="section2" class="section w-100 d-flex flex-column justify-content-center align-items-center p-3 border">
+                            <h3>Select Goal Tracker Type</h3>
+                            <p>Select how you'd like to keep track of your goals.</p>
+                            <div class="d-flex flex-column flex-md-row gap-2 justify-content-center mb-3 mx-auto" id="chart-options">
+                                <div class="form-check p-0 flex-fill">
+                                    <input class="form-check-input" type="radio" name="trackerType" id="chart-radio"
+                                        value="chart">
+                                    <label class="form-check-label p-0 mx-auto" for="chart-radio">
+                                        <img src="/images/line-chart-select.png"
+                                            alt="Option to select Custom Line Chart" class="radio-image"
+                                            style="max-width: 200px">
+                                        <h4>Custom Line Chart</h4>
+                                        <p>Perfect for tracking the progress of a metric that may fluctuate up or down.
+                                            Examples include weight, blood pressure, BMI, number of steps.</p>
+                                    </label>
+                                </div>
+                                <div class="form-check p-0 flex-fill">
+                                    <input class="form-check-input" type="radio" name="trackerType" id="progress-radio"
+                                        value="progress">
+                                    <label class="form-check-label p-0 mx-auto" for="progress-radio">
+                                        <img src="/images/progress-bar-select.png"
+                                            alt="Option to select Progress Tracker" class="radio-image"
+                                            style="max-width: 200px">
+                                        <h4>Custom Progress Tracker</h4>
+                                        <p>A progress tracker is great for cumulative goals that work towards a final
+                                            target value, such as 'run 15 miles in a month', or 'eat 35 pieces of fruit
+                                            and vegetables this week'.
+                                        </p>
+                                        <p>You'll be able to submit entries as you work towards your goal and track your
+                                            progress as a percentage.
+                                        </p>
+                                    </label>
+                                </div>
+
+                                <div class="form-check p-0 flex-fill">
+                                    <input class="form-check-input" type="radio" name="trackerType" id="todo-radio"
+                                        value="todo">
+                                    <label class="form-check-label p-0 mx-auto" for="todo-radio">
+                                        <img src="/images/goal-list-select.png" alt="Option to select Goal List"
+                                            class="radio-image" style="max-width: 200px">
+                                        <h4>Goal List</h4>
+                                        <p>You can use a goal list to set and tick off goals which may not include a
+                                            unit of measurement, such as 'get fit for the summer', or 'excercise for a
+                                            week'.</p>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="modal-nav" class="mt-auto">
+                                <a class="scroll-link mx-0" href="#section1">&#x2190; Go Back</a>
+                                <a class="scroll-link mx-0" href="#section3">Next &#x2192;</a>
+                            </div>
+                        </div>
+                        <div id="section3" class="section w-100 d-flex flex-column justify-content-center align-items-center p-3 border">
+                            <h3>Set Metric and Units</h3>
+                            <p>Your tracker metric is the thing that's being measured (or tracked), or, if you've chosen
+                                a goal list, the name of your list.</p>
+                            <p>Some examples of this include 'Weight', 'Days without smoking', 'Fruit and Veg eaten',
+                                "Hours of excercise completed".</p>
+                            <p>Your units are the units with which you measure this. For example, kilograms, days, or
+                                pieces (of fruit/veg). This can be left blank if you've chosen a Goal List.</p>
+                            <div class="row justify-content-center align-items-center my-4">
+                                <div class="text-center">
+                                    <div class="form-group mb-0 d-inline-flex flex-column flex-md-row align-items-center">
+                                        <label for="metric-input" class="mr-2">
+                                            <h4 style="white-space: pre;">I want to measure my </h4>
+                                        </label>
+                                        <input type="text" class="form-control custom-input md-w-25 mr-2" id="metric-input"
+                                            name="metric" maxlength="20" placeholder="(metric/list name)" required/>
+                                        <label for="using-input">
+                                            <h4 style="white-space: pre;"> using </h4>
+                                        </label>
+                                        <input type="text" class="form-control custom-input md-w-25 ml-2" id="using-input"
+                                            id="units-input" name="units" placeholder="(units)" maxlength="20" />
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-lg btn-outline-success md-w-25 my-3">Create Goal Tracker</button>
+                            <div class="modal-nav" class="mt-auto">
+                                <a class="scroll-link mx-0" href="#section2">&#x2190; Go Back</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // Smooth scrolling to anchor links
+    document.querySelectorAll('.scroll-link').forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    });
+</script>

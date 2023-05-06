@@ -2,8 +2,7 @@ const deleteGoalBtn = document.getElementById('delete-goal');
 
 deleteGoalBtn.addEventListener('click', () => {
   //get the data from the page
-  const metric = document.getElementById('goal-metric').value;
-  const date = document.getElementById('goal-date').innerText;
+  const goalId = document.getElementById('goal-id').value;
 
 
   //post data to server
@@ -22,5 +21,5 @@ deleteGoalBtn.addEventListener('click', () => {
       }
     }
   };
-  xhr.send(JSON.stringify({ metric, date }));
+  xhr.send(JSON.stringify({ goalId: goalId }));
 });

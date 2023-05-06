@@ -1,0 +1,19 @@
+<div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteConfirmationModalLabel">Confirm Goal Delete</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            {{#goals}}
+          <h4>Are you sure you want to delete your goal of <b>{{value}} {{units}}</b> by {{date}}?</h4>
+          {{/goals}}
+        </div>
+        <div class="modal-footer mx-auto">
+            <button type="button" class="btn btn-danger" id="delete-goal">Yes, delete goal</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
