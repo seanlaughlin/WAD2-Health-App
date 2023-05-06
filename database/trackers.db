@@ -1,3 +1,11 @@
 {"userId":"ALPG1wwdmUTLnfA4","metric":"weight","category":"Fitness","type":"chart","units":"kg","entries":[{"date":"2023-05-17","value":55},{"date":"2023-05-02","value":55}],"_id":"54bZiC2AG4H0luxE"}
 {"userId":"ALPG1wwdmUTLnfA4","metric":"Weight","category":"Fitness","type":"chart","units":"KG","entries":[],"_id":"SXo44lvSakzcLTxS"}
+{"userId":"ALPG1wwdmUTLnfA4","metric":"ddfs","category":"Lifestyle","type":"todo","units":"f","entries":[],"_id":"bDIQIDNVmcr6IS00"}
+{"userId":"ALPG1wwdmUTLnfA4","metric":"dsf","category":"Lifestyle","type":"goallist","units":"ff","entries":[],"_id":"iANha8K39UTSduF7"}
 {"userId":"ALPG1wwdmUTLnfA4","metric":"days not smoking","category":"Lifestyle","type":"progress","units":"days","entries":[],"_id":"in5f66awZVutIEdr"}
+{"$$deleted":true,"_id":"54bZiC2AG4H0luxE"}
+{"$$deleted":true,"_id":"SXo44lvSakzcLTxS"}
+{"$$deleted":true,"_id":"bDIQIDNVmcr6IS00"}
+{"$$deleted":true,"_id":"iANha8K39UTSduF7"}
+{"$$deleted":true,"_id":"in5f66awZVutIEdr"}
+{"userId":"ALPG1wwdmUTLnfA4","metric":"weight","category":"Nutrition and Diet","type":"chart","units":"kg","entries":[],"_id":"0DRKqIA31fYEAP7h"}

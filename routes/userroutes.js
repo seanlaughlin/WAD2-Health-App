@@ -28,8 +28,8 @@ router.get("/", authCheck, async (req, res) => {
 
   const achievedGoals = goals.filter(g => g.isAchieved);
   const outstandingGoals = goals.filter(g => !g.isAchieved);
+  console.log(outstandingGoals)
 
-  console.log(fitnessTrackers)
   // Get goals for each tracker
   const fitnessTrackersWithGoals = await Promise.all(
     fitnessTrackers.map(async (tracker) => {
@@ -39,7 +39,24 @@ router.get("/", authCheck, async (req, res) => {
       return { tracker, achievedGoals: achievedTrackerGoals, outstandingGoals: outstandingTrackerGoals };
     })
   );
-  console.log(fitnessTrackersWithGoals)
+
+  const nutritionDietTrackersWithGoals = await Promise.all(
+    nutritionDietTrackers.map(async (tracker) => {
+      const trackerGoals = await goalDao.findByMetric(tracker.metric);
+      const achievedTrackerGoals = trackerGoals.filter(goal => goal.isAchieved);
+      const outstandingTrackerGoals = trackerGoals.filter(goal => !goal.isAchieved);
+      return { tracker, achievedGoals: achievedTrackerGoals, outstandingGoals: outstandingTrackerGoals };
+    })
+  );
+
+  const lifestyleTrackersWithGoals = await Promise.all(
+    lifestyleTrackers.map(async (tracker) => {
+      const trackerGoals = await goalDao.findByMetric(tracker.metric);
+      const achievedTrackerGoals = trackerGoals.filter(goal => goal.isAchieved);
+      const outstandingTrackerGoals = trackerGoals.filter(goal => !goal.isAchieved);
+      return { tracker, achievedGoals: achievedTrackerGoals, outstandingGoals: outstandingTrackerGoals };
+    })
+  );
 
   res.render("user/dashboard", {
     title: "Greenfields Health - User Dashboard",
@@ -48,8 +65,8 @@ router.get("/", authCheck, async (req, res) => {
     goalsAchieved: achievedGoals.length,
     goalsOutstanding: outstandingGoals.length,
     numberTrackers: trackers.length,
-    lifestyleTrackers,
-    nutritionDietTrackers,
+    lifestyleTrackers: lifestyleTrackersWithGoals,
+    nutritionDietTrackers: nutritionDietTrackersWithGoals,
     fitnessTrackers: fitnessTrackersWithGoals
   });
 });
@@ -286,6 +303,22 @@ router.post('/goal/delete', authCheck, async (req, res) => {
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: 'Error deleting goal' });
+  }
+});
+
+//Deletes tracker and goals
+router.delete('/tracker/delete/', authCheck, async (req, res) => {
+  const metric = req.body.metric;
+
+  try {
+
+    await trackerDao.deleteTrackerByMetric(metric);
+    await goalDao.deleteGoalsByMetric(metric);
+    res.sendStatus(200);
+  } catch (err) {
+    
+    console.error(err);
+    res.sendStatus(500);
   }
 });
 

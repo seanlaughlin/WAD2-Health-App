@@ -3,9 +3,10 @@
 <head>
     {{>header}}
     <script src="{{{path.join(__dirname, 'scripts', 'createtracker.js')}}}" defer></script>
+    <script src="../js/deletetracker.js" defer></script>
 </head>
 
-<body>
+<body class="vh-100">
     {{>nav}}
     <header class="text-center jumbotron bg-image d-flex align-items-center"
         style="background-image: url('https://brand.assets.adidas.com/f_auto,q_auto,fl_lossy/capi/enUS/Images/2021/10/fw21-cycling-mental-health-header-d_221-792946.jpg'); height: 400px; background-size: cover; background-repeat: no-repeat;">
@@ -13,73 +14,107 @@
             <h1 class="mb-3">Dashboard</h1>
             <h3>Welcome, {{name}}!</h3>
             <div class="row"></div>
-            <h5>Goals Achieved: {{goalsAchieved}} Goals Outstanding: {{goalsOutstanding}}</h5>
+            <h6>You've achieved {{goalsAchieved}} Health Goals 💚 </h6>
+            <h6>Goals Outstanding: {{goalsOutstanding}}</h6>
         </div>
     </header>
-    <main class="container p-3">
-        <section
-            class="d-flex flex-column flex-lg-row gap-3 justify-content-center align-items-lg-stretch align-items-center"
+    <main class="container p-3 vw-100">
+        <section class="d-flex flex-column gap-2 justify-content-center align-items-lg-stretch align-items-center"
             id="sectionInfoCards">
-            <div class="card flex-fill d-flex" style="max-width: 20rem;">
-                <img class="card-img-top"
-                    src="https://www.nutrition.org.uk/media/rk4eoex1/balanced-diet_s_1903172290.jpg"
-                    alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Nutrition & Diet</h5>
-                    {{#fitnessTrackers}}
-                    <p class="card-text">
-                        {{tracker.metric}}
-                        {{tracker.units}}
-                    </p>
-
-                    <h6>Achieved Goals</h6>
-                    <ul>
-                        {{#achievedGoals}}
-                        <li>
-                            Date Achieved: {{dateAchieved}}
-                            Value: {{value}}
-                        </li>
-                        {{/achievedGoals}}
-                    </ul>
-
-                    <h6>Outstanding Goals</h6>
-                    <ul>
-                        {{#outstandingGoals}}
-                        <li>
-                            Date: {{date}}
-                            Value: {{value}}
-                        </li>
-                        {{/outstandingGoals}}
-                    </ul>
-                    {{/fitnessTrackers}}
-
-                    {{>user/tracker/createtrackermodal}}
-                </div>
-            </div>
-            <a href="tracker?metric=Weight">
-                <div class="card flex-fill d-flex" style="max-width: 20rem;">
-                    <img class="card-img-top"
-                        src="https://hips.hearstapps.com/hmg-prod/images/mental-fitness-sessions-1674144770.jpg"
-                        alt="Card image cap">
+            <div class="panel flex-fill p-3 border rounded">dsf</div>
+            <div class="d-flex flex-column flex-md-row gap-2">
+                <div class="card flex-fill d-flex">
                     <div class="card-body">
-                        <h5 class="card-title">Fitness</h5>
-                        <p class="card-text">In the hustle and bustle of 21st century living, it's easy to lose track of
-                            your fitness goals and fall into old habits.
-                            Our fitness tips, tricks and information will help keep you on track. </p>
-                        <p>We also provide facilities to set custom fitness-related goals and log and track your
-                            progress towards them.
+                        <h5 class="card-title text-center">Nutrition & Diet</h5>
+
+                        <p class="card-text">
+                            Looking for some tips and tricks to help you eat better and stay healthier? Visit our <a
+                                href="nutrition-guide">Nutrition Guide!</a>
                         </p>
+                        <p class="card-text">Want to know what you're eating? Head over to our
+                            <a href="food-search">Food Search</a> to search and view nutrition, macro and calorie
+                            related
+                            information.
+                        </p>
+                        <p class="card-text">We've also got a
+                            <a href="bmi-calc">BMI Calculator</a> to help you stay on top of your health.
+                        </p>
+                        <h6 class="text-center">Your Nutrition & Diet Goals</h6>
+                        {{#nutritionDietTrackers}}
+                        <div class="card my-1 pb-2 text-center d-flex flex-column overflow-hidden">
+                            <span class="w-100 bg-dark text-light">{{tracker.metric}}</span>
+                            {{#achievedGoals.length}}<span>You've achieved {{achievedGoals.length}} goals for
+                                {{tracker.metric}}! 🏆</span>{{/achievedGoals.length}}
+                            {{#outstandingGoals}}<span>You've currently got {{outstandingGoals.length}} goals to
+                                achieve! 💪</span>{{/outstandingGoals}}
+                            {{^outstandingGoals}}<span>No goal currently set. Why not set one?
+                                🙏</span>{{/outstandingGoals}}
+                            <small><a href="tracker?metric={{tracker.metric}}">Go to {{tracker.metric}}
+                                    tracker</a></small>
+                            <small><a href="#" id="deleteTrackerLink" class="text-danger" data-metric="{{tracker.metric}}">Delete Tracker</a></small>
+                        </div>
+                        {{/nutritionDietTrackers}}
+
+                        {{>user/tracker/createtrackermodal}}
                     </div>
                 </div>
-            </a>
-            <div class="card flex-fill d-flex" style="max-width: 20rem;">
-                <img class="card-img-top"
-                    src="https://www.thewerklife.com/wp-content/uploads/2019/01/achieve-goals-800x533.jpeg"
-                    alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Lifestyle</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+                <div class="card flex-fill d-flex">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Fitness</h5>
+                        <p class="card-text">
+                            Looking for some tips and tricks to help you eat better and stay healthier? Visit our <a
+                                href="weight-guide">Weight Guide!</a>
+                        </p>
+                        <p class="card-text">Want to know what you're eating? Head over to our
+                            <a href="food-search">Food Search</a> to search and view nutrition, macro and calorie
+                            related
+                            information.
+                        </p>
+                        <h6 class="text-center">Your Fitness Goals</h6>
+                        {{#fitnessTrackers}}
+                        <div class="card my-1 pb-2 text-center d-flex flex-column overflow-hidden">
+                            <span class="w-100 bg-dark text-light">{{tracker.metric}}</span>
+                            {{#achievedGoals.length}}<span>You've achieved {{achievedGoals.length}} goals for
+                                {{tracker.metric}}! 🏆</span>{{/achievedGoals.length}}
+                            {{#outstandingGoals}}<span>You've currently got {{outstandingGoals.length}} goals to
+                                achieve! 💪</span>{{/outstandingGoals}}
+                            {{^outstandingGoals}}<span>No goal currently set. Why not set one?
+                                🙏</span>{{/outstandingGoals}}
+                            <small><a href="tracker?metric={{tracker.metric}}">Go to {{tracker.metric}}
+                                    tracker</a></small>
+                                    <small><a href="#" id="deleteTrackerLink" class="text-danger" data-metric="{{tracker.metric}}">Delete Tracker</a></small>
+                        </div>
+                        {{/fitnessTrackers}}
+                    </div>
+                </div>
+                <div class="card flex-fill d-flex">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Lifestyle</h5>
+                        <p class="card-text text-center">
+                            Looking for some tips and tricks to help you eat better and stay healthier? Visit our <a
+                                href="weight-guide">Weight Guide!</a>
+                        </p>
+                        <p class="card-text">Want to know what you're eating? Head over to our
+                            <a href="food-search">Food Search</a> to search and view nutrition, macro and calorie
+                            related
+                            information.
+                        </p>
+                        <h6 class="text-center">Your Lifestyle Goals</h6>
+                        {{#lifestyleTrackers}}
+                        <div class="card my-1 pb-2 text-center d-flex flex-column overflow-hidden">
+                            <span class="w-100 bg-dark text-light">{{tracker.metric}}</span>
+                            {{#achievedGoals.length}}<span>You've achieved {{achievedGoals.length}} goals for
+                                {{tracker.metric}}! 🏆</span>{{/achievedGoals.length}}
+                            {{#outstandingGoals}}<span>You've currently got {{outstandingGoals.length}} goals to
+                                achieve! 💪</span>{{/outstandingGoals}}
+                            {{^outstandingGoals}}<span>No goal currently set. Why not set one?
+                                🙏</span>{{/outstandingGoals}}
+                            <small><a href="tracker?metric={{tracker.metric}}">Go to {{tracker.metric}}
+                                    tracker</a></small>
+                                    <small><a href="#" id="deleteTrackerLink" class="text-danger" data-metric="{{tracker.metric}}">Delete Tracker</a></small>
+                        </div>
+                        {{/lifestyleTrackers}}
+                    </div>
                 </div>
             </div>
         </section>

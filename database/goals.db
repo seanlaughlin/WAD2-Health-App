@@ -1,6 +1,7 @@
 {"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1683676800000},"metric":"days not smoking","value":44,"isAchieved":true,"achievedDate":{"$$date":1683394582351},"_id":"2ZUbWkXju5xwf5NF"}
 {"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1684195200000},"metric":"weight","value":44,"isAchieved":true,"achievedDate":{"$$date":1683393769523},"_id":"2qAaCpRU0tNVsFp1"}
 {"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1684454400000},"metric":"days not smoking","value":20,"isAchieved":true,"achievedDate":{"$$date":1683394552782},"_id":"62EZVpebQuSi0SXW"}
+{"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1683763200000},"metric":"weight","value":55,"isAchieved":false,"achievedDate":null,"_id":"83rQstHE2BDPzON1"}
 {"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1684108800000},"metric":"weight","value":66,"isAchieved":true,"achievedDate":{"$$date":1683393794528},"_id":"B8UveRdpbQw3ATZ1"}
 {"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1684454400000},"metric":"days not smoking","value":55,"isAchieved":true,"achievedDate":{"$$date":1683394215028},"_id":"Co4cMmj17E0YJApW"}
 {"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1683072000000},"metric":"days not smoking","value":3,"isAchieved":true,"achievedDate":{"$$date":1683394558964},"_id":"GSFSqxc6eYLzu0iz"}
@@ -24,3 +25,25 @@
 {"multi":true,"_id":"xFSFLJys2rZWFXxT"}
 {"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1685232000000},"metric":"days not smoking","value":44,"isAchieved":true,"achievedDate":{"$$date":1683394650668},"_id":"y2H11h3QULNvnUHB"}
 {"multi":true,"_id":"yjI8Z7u4TuPFt0ev"}
+{"$$deleted":true,"_id":"2qAaCpRU0tNVsFp1"}
+{"$$deleted":true,"_id":"83rQstHE2BDPzON1"}
+{"$$deleted":true,"_id":"B8UveRdpbQw3ATZ1"}
+{"$$deleted":true,"_id":"VTx7yVvZ6ZlAbORX"}
+{"$$deleted":true,"_id":"2ZUbWkXju5xwf5NF"}
+{"$$deleted":true,"_id":"62EZVpebQuSi0SXW"}
+{"$$deleted":true,"_id":"Co4cMmj17E0YJApW"}
+{"$$deleted":true,"_id":"GSFSqxc6eYLzu0iz"}
+{"$$deleted":true,"_id":"HY8pMHBRuaYgGxpt"}
+{"$$deleted":true,"_id":"IILYU1VGJCbWTJ9s"}
+{"$$deleted":true,"_id":"N96nok5ao0z6q93r"}
+{"$$deleted":true,"_id":"OdlSWdNT47yHVSox"}
+{"$$deleted":true,"_id":"bBKwrOfGU2V94Ct4"}
+{"$$deleted":true,"_id":"gWOdJMBl3DFqGyPq"}
+{"$$deleted":true,"_id":"gg0RbpkhW016L8Mu"}
+{"$$deleted":true,"_id":"juLFPna5AGpIxPbk"}
+{"$$deleted":true,"_id":"o9l92kFz5Tvqg9zL"}
+{"$$deleted":true,"_id":"oncJLdNtBlu2hbnr"}
+{"$$deleted":true,"_id":"rIxqub0EwylPOYXo"}
+{"$$deleted":true,"_id":"w1Ic1x8xqdns3LrP"}
+{"$$deleted":true,"_id":"w41Xxyul40RJsvyz"}
+{"$$deleted":true,"_id":"y2H11h3QULNvnUHB"}

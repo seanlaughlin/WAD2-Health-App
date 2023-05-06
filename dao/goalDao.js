@@ -134,6 +134,17 @@ class GoalDao {
             );
         });
     }
+
+    async deleteGoalsByMetric(metric) {
+        try {
+            const numRemoved = await this.db.remove({ metric: metric }, { multi: true });
+            return numRemoved;
+        } catch (err) {
+            console.error(err);
+            throw err;
+        }
+    }
+
 }
 
 module.exports = GoalDao;
