@@ -1,12 +1,15 @@
+{"multi":true,"_id":"2ys0kmNOBpdHPfTi"}
 {"userId":"Yuq3ePNK44n4nGXo","date":{"$$date":1691276400000},"metric":"holiday prep","value":"dfgdfdfgfddfd","isAchieved":true,"achievedDate":{"$$date":1683544623142},"_id":"8vBjYZatmyMtGKDy"}
 {"userId":"Yuq3ePNK44n4nGXo","date":{"$$date":1686096000000},"metric":"holiday prep","value":"dsf","isAchieved":false,"achievedDate":null,"_id":"8w60ThYk11zq5qlk"}
+{"userId":"YpPDUCZ8Y3UfM9pC","date":{"$$date":1685750400000},"metric":"Apples Eaten","value":"55","isAchieved":false,"achievedDate":null,"_id":"9KLEoPmFjwNytLAI"}
 {"multi":true,"_id":"CNUM4mn7apg068ZH"}
 {"userId":"Yuq3ePNK44n4nGXo","date":null,"metric":"holiday prep","value":"sdfdsfa","isAchieved":true,"achievedDate":{"$$date":1683544792632},"_id":"DMqgQi5VItvSNEdi"}
-{"userId":"YpPDUCZ8Y3UfM9pC","date":{"$$date":1684281600000},"metric":"Weight","value":"55","isAchieved":false,"achievedDate":null,"_id":"Dv3obUOzMTBPuKvx"}
 {"userId":"Yuq3ePNK44n4nGXo","date":{"$$date":1685923200000},"metric":"weight","value":"66","isAchieved":true,"achievedDate":{"$$date":1683546175070},"_id":"E3pC3elBXNh68QyK"}
 {"userId":"Yuq3ePNK44n4nGXo","date":{"$$date":1693954800000},"metric":"holiday prep","value":"fdsfsd`1","isAchieved":true,"achievedDate":{"$$date":1683546497310},"_id":"EF76s51bxc9rk1EP"}
+{"userId":"YpPDUCZ8Y3UfM9pC","date":{"$$date":1685145600000},"metric":"Holiday","value":"Lose Weight","isAchieved":false,"achievedDate":null,"_id":"FLaJp5M6Yz7RL9HO"}
 {"multi":true,"_id":"G9EWK601SynvRaMW"}
 {"multi":true,"_id":"HXCCOmBliXFII0Sj"}
+{"userId":"YpPDUCZ8Y3UfM9pC","date":{"$$date":1685491200000},"metric":"Weight","value":"100","isAchieved":true,"achievedDate":{"$$date":1683567389881},"_id":"KRNWm08flCw6DqXx"}
 {"multi":true,"_id":"L1dQ1rk8tIeAHIbt"}
 {"multi":true,"_id":"M0JszlgKzrUxI6Ra"}
 {"userId":"Yuq3ePNK44n4nGXo","date":{"$$date":1683158400000},"metric":"holiday prep","value":"df","isAchieved":false,"achievedDate":null,"_id":"MbLZTbWnOKNVI6Vo"}
@@ -14,7 +17,9 @@
 {"multi":true,"_id":"NRwukdvzGEOLj39z"}
 {"multi":true,"_id":"P32sn28OAQzIlB4p"}
 {"multi":true,"_id":"Tml4DEmc5vz2sM8I"}
+{"userId":"YpPDUCZ8Y3UfM9pC","date":{"$$date":1675555200000},"metric":"Holiday","value":"Eat More Apples","isAchieved":true,"achievedDate":{"$$date":1683567079220},"_id":"U4xJmnHUm970KG94"}
 {"multi":true,"_id":"UIgxsNmVTTsWZZVf"}
+{"userId":"YpPDUCZ8Y3UfM9pC","date":{"$$date":1684972800000},"metric":"Apples Eaten","value":"100","isAchieved":true,"achievedDate":{"$$date":1683567953214},"_id":"VNCoJ9Qp6r4Cn8Cg"}
 {"multi":true,"_id":"VSUPFwTdY8jK9tW2"}
 {"multi":true,"_id":"ZlnIX236U3K689zx"}
 {"multi":true,"_id":"bCaIHf1jczLNvzII"}
@@ -26,8 +31,9 @@
 {"userId":"Yuq3ePNK44n4nGXo","date":{"$$date":1675641600000},"metric":"holiday prep","value":"loose waiteee","isAchieved":true,"achievedDate":{"$$date":1683544952389},"_id":"iBWQvNcI26xxLTW4"}
 {"multi":true,"_id":"k9AjxH0nLVrcidiI"}
 {"userId":"Yuq3ePNK44n4nGXo","date":{"$$date":1685577600000},"metric":"weight","value":"443","isAchieved":true,"achievedDate":{"$$date":1683544917539},"_id":"nYvV5Q5JHhAEdJk2"}
+{"multi":true,"_id":"osUT2COek7wlytKm"}
 {"multi":true,"_id":"rKog5d3fjDVDWPg9"}
 {"multi":true,"_id":"sqYur5lJTxWacgX8"}
+{"userId":"YpPDUCZ8Y3UfM9pC","date":{"$$date":1680735600000},"metric":"ToDo","value":"Get Fit for Holidays","isAchieved":true,"achievedDate":{"$$date":1683569369671},"_id":"tJhktdQODDU1yTC6"}
 {"multi":true,"_id":"uCnyOdIQC8Dcm1vm"}
-{"userId":"YpPDUCZ8Y3UfM9pC","date":{"$$date":1685660400000},"metric":"holiday","value":"lose 60kg","isAchieved":true,"achievedDate":{"$$date":1683561664182},"_id":"ulcClQQlIfo3PskI"}
 {"multi":true,"_id":"ynB3fTVOyfnMaN92"}
