@@ -1,6 +1,6 @@
 const path = require("path");
-const GoalDao = require(path.resolve(__dirname, "../dao/goalDao"));
-const TrackerDao = require(path.resolve(__dirname,"../dao/trackerDao"));
+const GoalDao = require("../dao/goalDao");
+const TrackerDao = require("../dao/trackerDao");
 
 class GoalService {
     constructor() {

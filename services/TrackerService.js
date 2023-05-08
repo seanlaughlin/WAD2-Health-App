@@ -1,6 +1,6 @@
 const path = require("path");
 const TrackerDao = require('../dao/trackerDao');
-const GoalDao = require('../dao/GoalDao');
+const GoalDao = require('../dao/goalDao');
 
 class TrackerService {
 
