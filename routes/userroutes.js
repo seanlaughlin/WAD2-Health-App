@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const moment = require('moment');
-const UserController = require("../controllers/usercontroller");
+const path = require("path");
+const UserController = require(path.resolve(__dirname, "../controllers/usercontroller"));
 
 const authCheck = (req, res, next) => {
   //if user isn't logged in redirect to login

@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-console.log(__dirname)
-const authController = require("/opt/render/project/src/controllers/authController.js");
+const path = require("path");
+const authController = require(path.resolve(__dirname, "../controllers/authController.js"));
 
 router.get("/google", authController.googleAuth);
 router.post("/local", authController.localAuth);
