@@ -5,7 +5,7 @@ const GoalDao = require(path.resolve(__dirname, '../dao/goalDao'));
 class TrackerService {
 
     constructor() {
-        this.trackerDao = new TrackerDao(path.resolve(__dirname, './database/trackers.db'));
+        this.trackerDao = new TrackerDao(path.resolve(__dirname, '../database/trackers.db'));
     }
 
     setUserId(userId) {
