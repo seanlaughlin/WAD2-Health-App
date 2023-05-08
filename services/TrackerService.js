@@ -55,7 +55,7 @@ class TrackerService {
         const minimumValue = Math.min(...data);
         const units = tracker.units;
         const metric = tracker.metric;
-        const goalDao = new GoalDao(path.resolve(__dirname, './database/goals.db'));
+        const goalDao = new GoalDao('../database/goals.db');
         goalDao.setUserId(this.userId);
         console.log(this.userId)
         const goals = await goalDao.findByMetric(metric);
