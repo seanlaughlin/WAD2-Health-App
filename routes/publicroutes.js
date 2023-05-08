@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const path = require("path");
 const publicController = require("../controllers/publicController.js");
 
 //public routes

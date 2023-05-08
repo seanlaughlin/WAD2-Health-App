@@ -1,5 +1,5 @@
 const path = require("path");
-const UserDao = require(path.resolve(__dirname, '../dao/userDao'));
+const UserDao = require('../dao/userDao');
 const bcrypt = require('bcrypt');
 
 class UserService {
