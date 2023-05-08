@@ -47,7 +47,7 @@ class TrackerService {
         entries.sort((d1, d2) => new Date(d1.date) - new Date(d2.date));
 
         entries.forEach((element) => {
-            element.date = new Date(element.date).toLocaleDateString();
+            element.date = new Date(element.date).toLocaleDateString('en-GB');
         });
 
         const dates = entries.map((entry) => entry.date);
@@ -65,8 +65,8 @@ class TrackerService {
         console.log('goals', goals)
 
         goals.forEach((element) => {
-            element.date = new Date(element.date).toLocaleDateString();
-            element.achievedDate = new Date(element.achievedDate).toLocaleDateString();
+            element.date = new Date(element.date).toLocaleDateString('en-GB');
+            element.achievedDate = new Date(element.achievedDate).toLocaleDateString('en-GB');
         });
 
         const lastSubmission = data[data.length - 1];

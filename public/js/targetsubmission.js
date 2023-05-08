@@ -23,6 +23,8 @@ goalForm.addEventListener("submit", (e) => {
     unit: unit
   };
 
+  console.log(date)
+
 
   // Submit goal data to server
   fetch('/user/goal/submit', {
