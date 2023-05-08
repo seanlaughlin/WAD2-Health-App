@@ -1,15 +1,15 @@
 const path = require("path");
 const Datastore = require("nedb");
-const TrackerService = require(path.resolve(__dirname, "../services/TrackerService"));
+const TrackerDao = require(path.resolve(__dirname, "../dao/trackerDao"));
 
 class GoalDao {
-    constructor(dbFilepath, userId) {
+    constructor(dbFilepath) {
         this.db = new Datastore({
             filename: dbFilepath,
             autoload: true,
         });
+        console.log()
         //Set tracker id to find their associated goals
-        this.userId = userId;
     }
 
     setUserId(id) {
@@ -113,11 +113,11 @@ class GoalDao {
     //Get goals by category (nutrition and diet, fitness, lifestyle)
     async findByCategory(category) {
         return new Promise((resolve, reject) => {
-        const trackerService = new TrackerService();
-          trackerService.setUserId(this.userId);
+        const trackerDao = new TrackerDao();
+          trackerDao.setUserId(this.userId);
           const goals = [];
       
-          trackerService.getTrackersByCategory(category)
+          trackerDao.findTrackersByCategory(category)
             .then(async (trackers) => {
               for (const tracker of trackers) {
                 const trackerGoals = await this.findByMetric(tracker.metric);
