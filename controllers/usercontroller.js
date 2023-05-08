@@ -70,7 +70,7 @@ const UserController = {
       }
     } catch (error) {
       console.log(error);
-      res.render('error/500');
+      res.render('500');
     }
   },
 
