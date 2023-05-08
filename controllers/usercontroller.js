@@ -1,5 +1,6 @@
-const GoalService = require("../services/GoalService");
-const TrackerService = require("../services/TrackerService");
+const path = require("path");
+const GoalService = require(path.resolve(__dirname, "../services/GoalService"));
+const TrackerService = require(path.resolve(__dirname, "../services/TrackerService"));
 
 //instantiate the two services used
 const goalService = new GoalService();

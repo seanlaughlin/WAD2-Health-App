@@ -1,10 +1,11 @@
-const TrackerDao = require('../dao/trackerDao');
-const GoalDao = require('../dao/GoalDao');
+const path = require("path");
+const TrackerDao = require(path.resolve(__dirname, '../dao/trackerDao'));
+const GoalDao = require(path.resolve(__dirname, '../dao/GoalDao'));
 
 class TrackerService {
 
     constructor() {
-        this.trackerDao = new TrackerDao('./database/trackers.db');
+        this.trackerDao = new TrackerDao(path.resolve(__dirname, './database/trackers.db'));
     }
 
     setUserId(userId) {
@@ -54,7 +55,7 @@ class TrackerService {
         const minimumValue = Math.min(...data);
         const units = tracker.units;
         const metric = tracker.metric;
-        const goalDao = new GoalDao('./database/goals.db');
+        const goalDao = new GoalDao(path.resolve(__dirname, './database/goals.db'));
         goalDao.setUserId(this.userId);
         console.log(this.userId)
         const goals = await goalDao.findByMetric(metric);

@@ -1,9 +1,10 @@
-const GoalDao = require("../dao/goalDao");
-const TrackerDao = require("../dao/trackerDao");
+const path = require("path");
+const GoalDao = require(path.resolve(__dirname, "../dao/goalDao"));
+const TrackerDao = require(path.resolve(__dirname,"../dao/trackerDao"));
 
 class GoalService {
     constructor() {
-        this.goalDao = new GoalDao('./database/goals.db');
+        this.goalDao = new GoalDao(path.resolve(__dirname, './database/goals.db'));
     }
 
     setUserId(userId) {
@@ -16,7 +17,7 @@ class GoalService {
     }
 
     async getGoalsAndTrackers() {
-        const trackerDao = new TrackerDao('./database/trackers.db');
+        const trackerDao = new TrackerDao(path.resolve(__dirname, './database/trackers.db'));
         //Set dao user id's to use in locating objects
         trackerDao.setUserId(this.userId);
         const goals = await this.goalDao.findAll();

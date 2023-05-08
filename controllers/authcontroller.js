@@ -1,5 +1,6 @@
+const path = require("path");
 const passport = require("passport");
-const UserDao = require("../dao/userDao");
+const UserDao = require(path.resolve(__dirname, "../dao/userDao"));
 const bcrypt = require("bcrypt");
 
 //Google login

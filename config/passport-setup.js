@@ -1,11 +1,12 @@
+const path = require("path");
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20");
 const LocalStrategy = require("passport-local");
 const bcrypt = require("bcrypt");
-const keys = require("./keys");
-const UserDao = require("../dao/userDao");
-const User = require("../models/User");
-let dao = new UserDao("./database/users.db");
+const keys = require(path.resolve(__dirname, "./keys"));
+const UserDao = require(path.resolve(__dirname, "../dao/userDao"));
+const User = require(path.resolve(__dirname, "../models/User"));
+let dao = new UserDao(path.resolve(__dirname, "./database/users.db"));
 
 //Serialise via user object identifier
 passport.serializeUser((user, done) => {

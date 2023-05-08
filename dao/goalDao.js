@@ -1,5 +1,6 @@
+const path = require("path");
 const Datastore = require("nedb");
-const TrackerService = require("../services/TrackerService");
+const TrackerService = require(path.resolve(__dirname, "../services/TrackerService"));
 
 class GoalDao {
     constructor(dbFilepath, userId) {

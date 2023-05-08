@@ -1,9 +1,10 @@
-const UserDao = require('../dao/userDao');
+const path = require("path");
+const UserDao = require(path.resolve(__dirname, '../dao/userDao'));
 const bcrypt = require('bcrypt');
 
 class UserService {
     constructor() {
-        this.userDao = new UserDao('./database/users.db');
+        this.userDao = new UserDao(path.resolve(__dirname, './database/users.db'));
     }
 
     //Register user using UserDao and bCrypt to encrypt passwords
