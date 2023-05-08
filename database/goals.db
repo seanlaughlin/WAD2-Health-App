@@ -1,49 +1,33 @@
-{"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1683676800000},"metric":"days not smoking","value":44,"isAchieved":true,"achievedDate":{"$$date":1683394582351},"_id":"2ZUbWkXju5xwf5NF"}
-{"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1684195200000},"metric":"weight","value":44,"isAchieved":true,"achievedDate":{"$$date":1683393769523},"_id":"2qAaCpRU0tNVsFp1"}
-{"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1684454400000},"metric":"days not smoking","value":20,"isAchieved":true,"achievedDate":{"$$date":1683394552782},"_id":"62EZVpebQuSi0SXW"}
-{"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1683763200000},"metric":"weight","value":55,"isAchieved":false,"achievedDate":null,"_id":"83rQstHE2BDPzON1"}
-{"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1684108800000},"metric":"weight","value":66,"isAchieved":true,"achievedDate":{"$$date":1683393794528},"_id":"B8UveRdpbQw3ATZ1"}
-{"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1684454400000},"metric":"days not smoking","value":55,"isAchieved":true,"achievedDate":{"$$date":1683394215028},"_id":"Co4cMmj17E0YJApW"}
-{"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1683072000000},"metric":"days not smoking","value":3,"isAchieved":true,"achievedDate":{"$$date":1683394558964},"_id":"GSFSqxc6eYLzu0iz"}
-{"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1683763200000},"metric":"days not smoking","value":44,"isAchieved":true,"achievedDate":{"$$date":1683396547256},"_id":"HY8pMHBRuaYgGxpt"}
-{"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1683676800000},"metric":"days not smoking","value":44,"isAchieved":true,"achievedDate":{"$$date":1683397197539},"_id":"IILYU1VGJCbWTJ9s"}
-{"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1683763200000},"metric":"days not smoking","value":44,"isAchieved":true,"achievedDate":{"$$date":1683394824127},"_id":"N96nok5ao0z6q93r"}
-{"multi":true,"_id":"ONIiTSEyog1SCp7n"}
-{"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1683676800000},"metric":"days not smoking","value":100,"isAchieved":true,"achievedDate":{"$$date":1683393918678},"_id":"OdlSWdNT47yHVSox"}
-{"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1684281600000},"metric":"weight","value":44,"isAchieved":true,"achievedDate":{"$$date":1683393718672},"_id":"VTx7yVvZ6ZlAbORX"}
-{"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1684454400000},"metric":"days not smoking","value":55,"isAchieved":true,"achievedDate":{"$$date":1683395152865},"_id":"bBKwrOfGU2V94Ct4"}
-{"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1684454400000},"metric":"days not smoking","value":44,"isAchieved":true,"achievedDate":{"$$date":1683394625209},"_id":"gWOdJMBl3DFqGyPq"}
-{"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1683763200000},"metric":"days not smoking","value":44,"isAchieved":true,"achievedDate":{"$$date":1683394661147},"_id":"gg0RbpkhW016L8Mu"}
-{"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1684886400000},"metric":"days not smoking","value":55,"isAchieved":true,"achievedDate":{"$$date":1683397028524},"_id":"juLFPna5AGpIxPbk"}
-{"multi":true,"_id":"o2sxSC5ivn1xvJvf"}
-{"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1684454400000},"metric":"days not smoking","value":44,"isAchieved":true,"achievedDate":{"$$date":1683395493106},"_id":"o9l92kFz5Tvqg9zL"}
-{"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1683763200000},"metric":"days not smoking","value":10,"isAchieved":true,"achievedDate":{"$$date":1683395433448},"_id":"oncJLdNtBlu2hbnr"}
-{"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1683849600000},"metric":"days not smoking","value":55,"isAchieved":true,"achievedDate":{"$$date":1683395022440},"_id":"rIxqub0EwylPOYXo"}
-{"multi":true,"_id":"rx0oTexQaaQZf16c"}
-{"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1685145600000},"metric":"days not smoking","value":55,"isAchieved":true,"achievedDate":{"$$date":1683395218401},"_id":"w1Ic1x8xqdns3LrP"}
-{"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1684972800000},"metric":"days not smoking","value":3,"isAchieved":false,"achievedDate":null,"_id":"w41Xxyul40RJsvyz"}
-{"multi":true,"_id":"xFSFLJys2rZWFXxT"}
-{"userId":"ALPG1wwdmUTLnfA4","date":{"$$date":1685232000000},"metric":"days not smoking","value":44,"isAchieved":true,"achievedDate":{"$$date":1683394650668},"_id":"y2H11h3QULNvnUHB"}
-{"multi":true,"_id":"yjI8Z7u4TuPFt0ev"}
-{"$$deleted":true,"_id":"2qAaCpRU0tNVsFp1"}
-{"$$deleted":true,"_id":"83rQstHE2BDPzON1"}
-{"$$deleted":true,"_id":"B8UveRdpbQw3ATZ1"}
-{"$$deleted":true,"_id":"VTx7yVvZ6ZlAbORX"}
-{"$$deleted":true,"_id":"2ZUbWkXju5xwf5NF"}
-{"$$deleted":true,"_id":"62EZVpebQuSi0SXW"}
-{"$$deleted":true,"_id":"Co4cMmj17E0YJApW"}
-{"$$deleted":true,"_id":"GSFSqxc6eYLzu0iz"}
-{"$$deleted":true,"_id":"HY8pMHBRuaYgGxpt"}
-{"$$deleted":true,"_id":"IILYU1VGJCbWTJ9s"}
-{"$$deleted":true,"_id":"N96nok5ao0z6q93r"}
-{"$$deleted":true,"_id":"OdlSWdNT47yHVSox"}
-{"$$deleted":true,"_id":"bBKwrOfGU2V94Ct4"}
-{"$$deleted":true,"_id":"gWOdJMBl3DFqGyPq"}
-{"$$deleted":true,"_id":"gg0RbpkhW016L8Mu"}
-{"$$deleted":true,"_id":"juLFPna5AGpIxPbk"}
-{"$$deleted":true,"_id":"o9l92kFz5Tvqg9zL"}
-{"$$deleted":true,"_id":"oncJLdNtBlu2hbnr"}
-{"$$deleted":true,"_id":"rIxqub0EwylPOYXo"}
-{"$$deleted":true,"_id":"w1Ic1x8xqdns3LrP"}
-{"$$deleted":true,"_id":"w41Xxyul40RJsvyz"}
-{"$$deleted":true,"_id":"y2H11h3QULNvnUHB"}
+{"userId":"Yuq3ePNK44n4nGXo","date":{"$$date":1691276400000},"metric":"holiday prep","value":"dfgdfdfgfddfd","isAchieved":true,"achievedDate":{"$$date":1683544623142},"_id":"8vBjYZatmyMtGKDy"}
+{"userId":"Yuq3ePNK44n4nGXo","date":{"$$date":1686096000000},"metric":"holiday prep","value":"dsf","isAchieved":false,"achievedDate":null,"_id":"8w60ThYk11zq5qlk"}
+{"multi":true,"_id":"CNUM4mn7apg068ZH"}
+{"userId":"Yuq3ePNK44n4nGXo","date":null,"metric":"holiday prep","value":"sdfdsfa","isAchieved":true,"achievedDate":{"$$date":1683544792632},"_id":"DMqgQi5VItvSNEdi"}
+{"userId":"YpPDUCZ8Y3UfM9pC","date":{"$$date":1684281600000},"metric":"Weight","value":"55","isAchieved":false,"achievedDate":null,"_id":"Dv3obUOzMTBPuKvx"}
+{"userId":"Yuq3ePNK44n4nGXo","date":{"$$date":1685923200000},"metric":"weight","value":"66","isAchieved":true,"achievedDate":{"$$date":1683546175070},"_id":"E3pC3elBXNh68QyK"}
+{"userId":"Yuq3ePNK44n4nGXo","date":{"$$date":1693954800000},"metric":"holiday prep","value":"fdsfsd`1","isAchieved":true,"achievedDate":{"$$date":1683546497310},"_id":"EF76s51bxc9rk1EP"}
+{"multi":true,"_id":"G9EWK601SynvRaMW"}
+{"multi":true,"_id":"HXCCOmBliXFII0Sj"}
+{"multi":true,"_id":"L1dQ1rk8tIeAHIbt"}
+{"multi":true,"_id":"M0JszlgKzrUxI6Ra"}
+{"userId":"Yuq3ePNK44n4nGXo","date":{"$$date":1683158400000},"metric":"holiday prep","value":"df","isAchieved":false,"achievedDate":null,"_id":"MbLZTbWnOKNVI6Vo"}
+{"multi":true,"_id":"MrqZr4BzwVaMbDLj"}
+{"multi":true,"_id":"NRwukdvzGEOLj39z"}
+{"multi":true,"_id":"P32sn28OAQzIlB4p"}
+{"multi":true,"_id":"Tml4DEmc5vz2sM8I"}
+{"multi":true,"_id":"UIgxsNmVTTsWZZVf"}
+{"multi":true,"_id":"VSUPFwTdY8jK9tW2"}
+{"multi":true,"_id":"ZlnIX236U3K689zx"}
+{"multi":true,"_id":"bCaIHf1jczLNvzII"}
+{"multi":true,"_id":"daY53rRMUvqweX4G"}
+{"multi":true,"_id":"fHQ9crTYdGq6ThoW"}
+{"multi":true,"_id":"fRqXp18YvWr7vYC0"}
+{"multi":true,"_id":"hAvFzsTESzXhGERh"}
+{"multi":true,"_id":"hDuNZF2XlpE1WUcY"}
+{"userId":"Yuq3ePNK44n4nGXo","date":{"$$date":1675641600000},"metric":"holiday prep","value":"loose waiteee","isAchieved":true,"achievedDate":{"$$date":1683544952389},"_id":"iBWQvNcI26xxLTW4"}
+{"multi":true,"_id":"k9AjxH0nLVrcidiI"}
+{"userId":"Yuq3ePNK44n4nGXo","date":{"$$date":1685577600000},"metric":"weight","value":"443","isAchieved":true,"achievedDate":{"$$date":1683544917539},"_id":"nYvV5Q5JHhAEdJk2"}
+{"multi":true,"_id":"rKog5d3fjDVDWPg9"}
+{"multi":true,"_id":"sqYur5lJTxWacgX8"}
+{"multi":true,"_id":"uCnyOdIQC8Dcm1vm"}
+{"userId":"YpPDUCZ8Y3UfM9pC","date":{"$$date":1685660400000},"metric":"holiday","value":"lose 60kg","isAchieved":true,"achievedDate":{"$$date":1683561664182},"_id":"ulcClQQlIfo3PskI"}
+{"multi":true,"_id":"ynB3fTVOyfnMaN92"}

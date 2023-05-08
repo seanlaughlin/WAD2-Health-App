@@ -1,14 +1,37 @@
 const Datastore = require("nedb");
-const Tracker = require("../models/Tracker");
 
 class TrackerDao {
-  constructor(dbFilepath, userId) {
+  constructor(dbFilepath) {
     this.db = new Datastore({
       filename: dbFilepath,
       autoload: true,
+      schema: {
+        userId: { type: String, required: true },
+        metric: { type: String, unique: true, required: true },
+        category: { type: String, required: true },
+        type: { type: String, required: true },
+        units: { type: String, required: false },
+        entries: { type: Array, required: false },
+      }
     });
-    //Set user id to find their associated trackers
-    this.userId = "";
+  }
+
+  //Validate against schema
+  validateTracker(data, schema) {
+    const result = {};
+    result.isValid = true;
+    result.errors = [];
+
+    for (const property in schema) {
+      const { required } = schema[property];
+      const value = data[property];
+
+      if (required && (value === undefined || value === null)) {
+        result.isValid = false;
+        result.errors.push(`'${property}' is required.`);
+      }
+    }
+    return result;
   }
 
   setUserId(id) {
@@ -58,10 +81,10 @@ class TrackerDao {
     });
   }
 
-  //Returns trackers of category (nutrition and diet, fitness, lifestyle)
+  //Find by category (nutrition and diet, fitness, lifestyle)
   async findTrackersByCategory(category) {
     return new Promise((resolve, reject) => {
-      this.db.find({ userId: this.userId, type: this.type }, (err, trackers) => {
+      this.db.find({ userId: this.userId, category: category }, (err, trackers) => {
         if (err) {
           reject(err);
         } else {
@@ -128,18 +151,20 @@ class TrackerDao {
       return numUpdated;
     } catch (err) {
       console.error(err);
-      throw err;
     }
   }
 
   async deleteTrackerByMetric(metric) {
+    let numRemoved; // Declare the variable outside the try-catch block
+
     try {
-      const numRemoved = await this.db.remove({ metric: metric }, { multi: true });
-      return numRemoved;
+      numRemoved = await this.db.remove({ metric: metric }, { multi: true });
     } catch (err) {
       console.error(err);
-      throw err;
+      throw err; // Rethrow the error to propagate it
     }
+
+    return numRemoved; // Return the value outside the try-catch block
   }
 }
 

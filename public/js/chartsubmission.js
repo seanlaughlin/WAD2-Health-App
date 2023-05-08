@@ -17,21 +17,25 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         }
 
-        // Create a data object with the data and date values
-        const data = { value: value, date: date, metric: metric,unit: unit };
+        const data = { value: value, date: date, metric: metric, unit: unit };
 
-        // Send an AJAX POST request to the server to submit the data
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', '/user/metric/submit');
-        xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-        xhr.onload = function () {
-            if (xhr.status === 200) {
-                // Reload the page to update the chart with the new data
-                location.reload();
+        //Send the data to the server
+        fetch('/user/metric/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json;charset=UTF-8'
+          },
+          body: JSON.stringify(data)
+        })
+          .then(response => {
+            if (response.ok) {
+              location.reload(); // Reload the page to update chart with new data
             } else {
-                console.log('Error:', xhr.responseText);
+              throw new Error('Error: ' + response.statusText);
             }
-        };
-        xhr.send(JSON.stringify(data));
+          })
+          .catch(error => {
+            console.log(error);
+          });
     });
 });

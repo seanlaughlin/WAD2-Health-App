@@ -1,5 +1,5 @@
 // Get the delete tracker link element
-const deleteTrackerLink = document.getElementById('deleteTrackerLink');
+const deleteTrackerLink = document.getElementById('delete-tracker');
 
 // Add click event listener to the link
 deleteTrackerLink.addEventListener('click', async (event) => {
@@ -7,14 +7,15 @@ deleteTrackerLink.addEventListener('click', async (event) => {
 
   // Get the metric from the link
   const metric = deleteTrackerLink.getAttribute('data-metric');
+  console.log(metric)
 
   try {
     // Delete the tracker and goals
     await deleteTrackerAndGoals(metric);
-    console.log('Tracker and goals deleted successfully.');
+    console.log('Tracker deleted successfully.');
 
   } catch (error) {
-    console.error('Error deleting tracker and goals:', error);
+    console.error('Error deleting tracker:', error);
   }
 });
 
@@ -30,7 +31,7 @@ async function deleteTrackerAndGoals(metric) {
     });
 
     if (!deleteTrackerResponse.ok) {
-      throw new Error('Failed to delete tracker and goals');
+      throw new Error('Failed to delete tracker');
     }
     else{
         location.reload();

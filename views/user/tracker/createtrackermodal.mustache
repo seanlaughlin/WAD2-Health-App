@@ -20,6 +20,7 @@
 
     .scroll-link:hover {
         text-decoration: underline;
+        color: #333;
     }
 
     .form-check-input {
@@ -85,10 +86,12 @@
         border-color: #6c757d;
     }
 </style>
-<script src="../js/createtracker.js" defer></script>
-<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#create-tracker-modal">
+<script src="/js/createtracker.js" defer></script>
+
+{{! button to be used on page modal is to be launched from }}
+{{! <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#create-tracker-modal">
     Create a Goal Tracker
-</button>
+</button> }}
 
 <div class="modal fade" id="create-tracker-modal" tabindex="-1" aria-labelledby="create-tracker-modal-label"
     aria-hidden="true">
@@ -101,7 +104,7 @@
             <div class="modal-body overflow-hidden m-0 p-0">
                 <form class="container-fluid m-0 p-0" id="create-tracker-form">
                     <div class="scroll-container d-flex m-0 p-0">
-                        <div id="section1" class="section w-100 d-flex flex-column justify-content-center align-items-center p-3 border">
+                        <div id="section1" class="section w-100 d-flex flex-column justify-content-md-center align-items-center p-3 border">
                             <h3>Select a Category</h3>
                             <p>Select from below which category your goal fits in to best: </p>
                             <div class="d-flex flex-column flex-md-row gap-4 justify-content-center mb-3 mx-auto"
@@ -141,7 +144,7 @@
                                 <a class="scroll-link mx-0" href="#section2">Next &#x2192;</a>
                             </div>
                         </div>
-                        <div id="section2" class="section w-100 d-flex flex-column justify-content-center align-items-center p-3 border">
+                        <div id="section2" class="section w-100 d-flex flex-column justify-content-md-center align-items-center p-3 border">
                             <h3>Select Goal Tracker Type</h3>
                             <p>Select how you'd like to keep track of your goals.</p>
                             <div class="d-flex flex-column flex-md-row gap-2 justify-content-center mb-3 mx-auto" id="chart-options">
@@ -150,9 +153,9 @@
                                         value="chart">
                                     <label class="form-check-label p-0 mx-auto" for="chart-radio">
                                         <img src="/images/line-chart-select.png"
-                                            alt="Option to select Custom Line Chart" class="radio-image"
+                                            alt="Option to select Line Chart" class="radio-image"
                                             style="max-width: 200px">
-                                        <h4>Custom Line Chart</h4>
+                                        <h4>Line Chart</h4>
                                         <p>Perfect for tracking the progress of a metric that may fluctuate up or down.
                                             Examples include weight, blood pressure, BMI, number of steps.</p>
                                     </label>
@@ -164,7 +167,7 @@
                                         <img src="/images/progress-bar-select.png"
                                             alt="Option to select Progress Tracker" class="radio-image"
                                             style="max-width: 200px">
-                                        <h4>Custom Progress Tracker</h4>
+                                        <h4>Progress Tracker</h4>
                                         <p>A progress tracker is great for cumulative goals that work towards a final
                                             target value, such as 'run 15 miles in a month', or 'eat 35 pieces of fruit
                                             and vegetables this week'.
@@ -193,7 +196,7 @@
                                 <a class="scroll-link mx-0" href="#section3">Next &#x2192;</a>
                             </div>
                         </div>
-                        <div id="section3" class="section w-100 d-flex flex-column justify-content-center align-items-center p-3 border">
+                        <div id="section3" class="section w-100 d-flex flex-column justify-content-md-center align-items-center p-3 border">
                             <h3>Set Metric and Units</h3>
                             <p>Your tracker metric is the thing that's being measured (or tracked), or, if you've chosen
                                 a goal list, the name of your list.</p>
@@ -205,10 +208,11 @@
                                 <div class="text-center">
                                     <div class="form-group mb-0 d-inline-flex flex-column flex-md-row align-items-center">
                                         <label for="metric-input" class="mr-2">
-                                            <h4 style="white-space: pre;">I want to measure my </h4>
+                                            <h4 style="white-space: pre;">I want to track my </h4>
                                         </label>
                                         <input type="text" class="form-control custom-input md-w-25 mr-2" id="metric-input"
                                             name="metric" maxlength="20" placeholder="(metric/list name)" required/>
+                                            <h4>goals,</h4>
                                         <label for="using-input">
                                             <h4 style="white-space: pre;"> using </h4>
                                         </label>
@@ -218,6 +222,7 @@
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-lg btn-outline-success md-w-25 my-3">Create Goal Tracker</button>
+                            <span id="error-message" style="display: none" class="text-danger"></span>
                             <div class="modal-nav" class="mt-auto">
                                 <a class="scroll-link mx-0" href="#section2">&#x2190; Go Back</a>
                             </div>

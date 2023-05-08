@@ -1,0 +1,52 @@
+<section class="d-flex flex-column flex-md-row justify-content-center w-100 gap-2">
+    <div class="border rounded p-2 flex-fill text-center">
+        <h4>Goals Achieved &#127942;</h4>
+        <div class="table-responsive">
+            <table class="table table-striped text-center mx-auto">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Goal</th>
+                        <th>Type</th>
+                        <th>Due Date</th>
+                        <th>Date Achieved</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#goalsAchieved}}
+                    <tr>
+                        <td>{{value}} {{#units}}({{units}}){{/units}}</td>
+                        <td>{{metric}}</td>
+                        <th>{{date}}</th>
+                        <td>Achieved on {{achievedDate}} 🏆</td>
+                    </tr>
+                    {{/goalsAchieved}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="border rounded p-2 flex-fill text-center">
+        <h4>Goals Outstanding 🎯</h4>
+        <div class="table-responsive">
+            <table class="table table-striped text-center mx-auto">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Goal</th>
+                        <th>Type</th>
+                        <th>Due Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#goalsOutstanding}}
+                    <tr>
+                        <td>{{value}} {{#units}}({{units}}){{/units}}</td>
+                        <td><a href='/user/tracker?metric={{metric}}' style="color: black;">{{metric}}</a></td>
+                        <td>Due by {{date}}</td>
+                    </tr>
+                    {{/goalsOutstanding}}
+                </tbody>
+            </table>
+            <p class="lh-1"><small>Click on the tracker name (the type) to visit the tracker.</small></p>
+            <p class="lh-1"><small>There you can edit, delete, and mark your goals as complete.</small></p>
+        </div>
+    </div>
+</section>

@@ -26,13 +26,36 @@
         <a class="nav-link" href="/user/">Dashboard</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="nutrition">Nutrition & Diet</a>
+        <a class="nav-link" href="/user/goals?category=All">My Goals</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="fitness">Fitness</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="nutrition-dropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Nutrition & Diet
+        </a>
+        <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="nutrition-dropdown">
+          <a class="dropdown-item" href="/user/nutrition/guide">Guide</a>
+          <a class="dropdown-item" href="/user/goals?category=Nutrition+and+Diet">Nutrition Goals</a>
+          <a class="dropdown-item" href="/user/nutrition/calculator">Calorie Calculator</a>
+        </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="lifestyle">Lifestyle</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="fitness-dropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Fitness
+        </a>
+        <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="fitness-dropdown">
+          <a class="dropdown-item" href="/user/fitness/guide">Guide</a>
+          <a class="dropdown-item" href="/user/goals?category=Fitness">Fitness Goals</a>
+          <a class="dropdown-item" href="/user/fitness/calculator">BMI Calculator</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="lifestyle-dropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Lifestyle
+        </a>
+        <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="lifestyle-dropdown">
+          <a class="dropdown-item" href="/user/lifestyle/guide">Guide</a>
+          <a class="dropdown-item" href="/user/goals?category=Lifestyle">Lifestyle Goals</a>
+        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/auth/logout">Log Out</a>

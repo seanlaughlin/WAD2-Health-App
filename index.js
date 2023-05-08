@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express();
-const passportSetup = require("./config/passport-setup");
 const cookieSession = require("cookie-session");
 const cookieParser = require("cookie-parser");
 const keys = require("./config/keys");
 const passport = require("passport");
+const passportSetup = require("./config/passport-setup");
 const flash = require("connect-flash");
 const bodyParser = require('body-parser');
 require("dotenv").config();
@@ -15,6 +15,7 @@ app.use(
   })
 );
 
+//Set up cookie for auth
 app.use(
   cookieSession({
     //1 day
@@ -31,20 +32,23 @@ app.use(flash());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+//Link paths to directories for static content
 const path = require("path");
 const public = path.join(__dirname, "public");
 app.use(express.static(public));
 
-app.use("/css", express.static(__dirname + "/node_modules/bootstrap/dist/css"));
+app.use("/css", express.static(__dirname + "/css"));
 app.use("/js", express.static(__dirname + "/scripts"))
 app.use("/images", express.static(__dirname + "/images"));
 
+//Set mustache up
 const mustache = require("mustache-express");
 app.engine("mustache", mustache());
 app.set("view engine", "mustache");
 
-const authrouter = require("./routes/authroutes");
-app.use("/auth", authrouter);
+//Set routers
+const authRouter = require("./routes/authRoutes");
+app.use("/auth", authRouter);
 
 const userrouter = require("./routes/userroutes");
 app.use("/user", userrouter);
@@ -52,6 +56,7 @@ app.use("/user", userrouter);
 const publicrouter = require("./routes/publicroutes");
 app.use("/", publicrouter);
 
+//Start server on port 3000
 app.listen(process.env.PORT || 3000, () => {
   console.log("Server started. Ctrl^c to quit.");
 });

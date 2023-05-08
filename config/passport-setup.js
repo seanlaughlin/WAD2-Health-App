@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 const keys = require("./keys");
 const UserDao = require("../dao/userDao");
 const User = require("../models/User");
-const dao = new UserDao(".\\database\\users.db");
+let dao = new UserDao("./database/users.db");
 
 //Serialise via user object identifier
 passport.serializeUser((user, done) => {
@@ -61,6 +61,7 @@ passport.use(
     { usernameField: "email", passwordField: "password" },
     async (email, password, done) => {
       try {
+        dao = new UserDao('./database/users.db')
         // Check if the email is valid and load the user
         const user = await dao.findUserByEmail(email);
         if (!user) {
@@ -81,6 +82,7 @@ passport.use(
         // Return the user if authenticated
         return done(null, user);
       } catch (err) {
+        console.log(err)
         return done(err);
       }
     }

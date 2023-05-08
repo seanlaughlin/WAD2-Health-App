@@ -3,7 +3,7 @@ const userDashboard = document.getElementById('user-dashboard');
 const trackersList = document.getElementById('trackers-list');
 
 // Function to display the trackers on the user dashboard
-function displayTrackers(trackers) {
+const displayTrackers = (trackers) => {
   // Clear the existing list
   trackersList.innerHTML = '';
 
@@ -18,7 +18,7 @@ function displayTrackers(trackers) {
   userDashboard.style.display = 'block';
 }
 
-// Fetch the trackers using AJAX
+// Fetch the trackers
 fetch('/trackers')
   .then(response => response.json())
   .then(data => {

@@ -9,6 +9,7 @@
   const cancelButton = editForm.querySelector('#cancel-edit');
   const metric = document.getElementById('goal-metric').value;
   const goalId = document.getElementById('goal-id').value;
+  const achievedMessage = document.getElementById('achieved-message');
 
   editBtn.addEventListener('click', () => {
     // Get the current date and value
@@ -21,6 +22,8 @@
 
     // Hide current info and show edit form
     goalInfo.style.display = 'none';
+    //Isn't rendered on every tracker type
+    if(achievedMessage)  achievedMessage.style.display = 'none';
     editForm.style.display = 'block';
   });
 
@@ -54,11 +57,13 @@
 
   cancelButton.addEventListener('click', () => {
     editForm.style.display = 'none';
+    //Isn't rendered on every tracker type
+    if(achievedMessage) achievedMessage.style.display = 'block';
     goalInfo.style.display = 'block';
   });
 
 //Converts date string to date object, for use in autofilling edit goal date field
-  function parseDate(dateString) {
+  const parseDate = (dateString) => {
     const parts = dateString.split('/');
     const day = parseInt(parts[0], 10) + 1;
     const month = parseInt(parts[1], 10) - 1; // Months are zero-based (0-11)

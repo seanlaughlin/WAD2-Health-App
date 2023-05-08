@@ -1,4 +1,5 @@
 const Datastore = require("nedb");
+const TrackerService = require("../services/TrackerService");
 
 class GoalDao {
     constructor(dbFilepath, userId) {
@@ -57,6 +58,7 @@ class GoalDao {
         });
     }
 
+    //Get all goals mared as achieved by metric (for example, 'weight')
     async findAchievedByMetric(metric) {
         return new Promise((resolve, reject) => {
             this.db.find({ userId: this.userId, metric: metric, isAchieved: true }, (err, goals) => {
@@ -70,6 +72,7 @@ class GoalDao {
     }
 
 
+    //Get all goals matching provided metric (for example, 'weight')
     async findByMetric(metric) {
         return new Promise((resolve, reject) => {
             this.db.find({ userId: this.userId, metric: metric }, (err, goals) => {
@@ -106,17 +109,27 @@ class GoalDao {
         }
     }
 
+    //Get goals by category (nutrition and diet, fitness, lifestyle)
     async findByCategory(category) {
         return new Promise((resolve, reject) => {
-            this.db.find({ userId: this.userId, category: category, isAchieved: true }, (err, goals) => {
-                if (err) {
-                    reject(err);
-                } else {
-                    resolve(goals);
-                }
+        const trackerService = new TrackerService();
+          trackerService.setUserId(this.userId);
+          const goals = [];
+      
+          trackerService.getTrackersByCategory(category)
+            .then(async (trackers) => {
+              for (const tracker of trackers) {
+                const trackerGoals = await this.findByMetric(tracker.metric);
+                goals.push(...trackerGoals);
+              }
+              resolve(goals);
+            })
+            .catch((err) => {
+              reject(err);
             });
         });
-    }
+      }
+      
 
     //Delete a goal from a tracker
     async delete(id) {
@@ -135,6 +148,7 @@ class GoalDao {
         });
     }
 
+    //Deletes all goals associated with a specific metric
     async deleteGoalsByMetric(metric) {
         try {
             const numRemoved = await this.db.remove({ metric: metric }, { multi: true });

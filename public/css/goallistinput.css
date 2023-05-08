@@ -1,0 +1,30 @@
+/* Remove all input styles for goal list inputs, makes the tasks editable while appearing as normal text
+adds underline when enabled to indicate editable */
+
+input.form-control, input.form-control:disabled {
+    border: none !important;
+    padding-bottom: 2px !important;
+    background-color: transparent !important;
+    outline: none !important;
+    /* Optionally, you can add more styles to match the text appearance */
+    font-family: inherit !important;
+    font-size: inherit !important;
+    color: inherit !important;
+  }
+
+  input#goal-input:enabled {
+    border-bottom: 1px solid black !important;
+  }
+
+  .custom-input {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    height: auto;
+    background-color: transparent;
+    width: 100%;
+    text-align: center;
+    font-size: x-large;
+}

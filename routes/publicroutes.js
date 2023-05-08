@@ -1,22 +1,20 @@
 const express = require("express");
 const router = express.Router();
-const controller = require("../controllers/controller.js");
+const publicController = require("../controllers/publicController.js");
 
 //public routes
-router.get("/", controller.landing_page);
-router.get("/about", controller.about_page);
-router.get("/login", controller.login_page);
-router.get("/register", controller.register_page);
+router.get("/", publicController.landing_page);
+router.get("/about", publicController.about_page);
+router.get("/login", publicController.login_page);
+router.get("/register", publicController.register_page);
 
 router.use((req, res) => {
   res.status(404);
-  res.type("text/plain");
-  res.send("404 Not found.");
+  res.render("404", {title: "Greenfields Health - Page Not Found", loggedIn: req.user ? true : false});
 });
 
 router.use((err, req, res, next) => {
   res.status(500);
-  res.type("text/plain");
-  res.send("Internal Server Error.");
+  res.render("500", {title: "Greenfields Health - Internal Server Error", loggedIn: req.user ? true : false});
 });
 module.exports = router;

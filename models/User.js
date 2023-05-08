@@ -1,10 +1,9 @@
 class User {
-  constructor(googleId, name, email, trackers, password) {
-    this.googleId = googleId;
-    this.name = name;
-    this.email = email;
-    this.trackers = trackers;
-    this.password = password;
+    constructor(googleId, name, email, trackers, password) {
+      this.googleId = googleId;
+      this.name = name;
+      this.email = email;
+      this.password = password;
+    }
   }
-}
-module.exports = User;
+  module.exports = User;

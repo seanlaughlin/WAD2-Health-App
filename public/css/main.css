@@ -1,0 +1,8 @@
+.black-link{
+    color: #333;
+    text-decoration: underline;
+}
+
+.black-link:hover{
+    color: grey;
+}
