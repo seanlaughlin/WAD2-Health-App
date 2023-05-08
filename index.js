@@ -47,13 +47,13 @@ app.engine("mustache", mustache());
 app.set("view engine", "mustache");
 
 //Set routers
-const authRouter = require("./routes/authRoutes");
+const authRouter = require(__dirname + '/routes/authroutes');
 app.use("/auth", authRouter);
 
-const userrouter = require("./routes/userroutes");
+const userrouter = require(__dirname + '/routes/userroutes');
 app.use("/user", userrouter);
 
-const publicrouter = require("./routes/publicroutes");
+const publicrouter = require(__dirname + '/routes/publicroutes');
 app.use("/", publicrouter);
 
 //Start server on port 3000
