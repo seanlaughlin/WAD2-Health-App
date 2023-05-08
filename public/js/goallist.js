@@ -102,12 +102,13 @@ const sendGoal = (goalId, isAchieved) => {
     const goalRow = document.getElementById(goalId);
     const updatedValue = goalRow.querySelector('input[name="value"]').value;
     const updatedDate = goalRow.querySelector('input[name="date"]').value;
-    console.log(updatedValue)
+    console.log(new Date(updatedDate))
+    console.log(new Date(updatedDate) instanceof Date && !isNaN(new Date(updatedDate).valueOf()))
 
     const updatedGoal = {
         goalId: goalId,
         value: updatedValue,
-        date: updatedDate,
+        date: new Date(updatedDate),
         isAchieved: isAchieved,
         //Check if achieved, if so, add today as achieved date
         achievedDate: isAchieved ? new Date() : null
@@ -154,4 +155,11 @@ const deleteGoal = (goalId) => {
         .catch(error => {
             console.error(error);
         });
+}
+
+const convertDate = (date) =>{
+    const dateParts = date.split("/");
+
+
+    return new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0]); 
 }

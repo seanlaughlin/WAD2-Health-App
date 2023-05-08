@@ -103,7 +103,6 @@ const UserController = {
     const value = req.body.value;
     const metric = req.body.metric;
     const date = new Date(req.body.date);
-
     try {
       const newGoal = {
         userId: req.user._id,
@@ -130,6 +129,8 @@ const UserController = {
     const value = req.body.value;
     const date = req.body.date;
     const goalId = req.body.goalId;
+    console.log('date', date)
+
 
     // Find the goal matching the user ID, metric, and incomplete status
     try {
@@ -140,7 +141,7 @@ const UserController = {
 
       if (goal) {
         // Update goal properties with received values, or keep the current values if not received
-        goal.date = date ? new Date(date) : goal.date;
+        goal.date = date ? parseInt(new Date(date).getTime()) : goal.date;
         goal.value = value ? value : goal.value;
         goal.isAchieved = isAchieved ? isAchieved : goal.isAchieved;
         goal.achievedDate = achievedDate ? new Date(achievedDate) : goal.achievedDate;
