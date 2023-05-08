@@ -8,7 +8,6 @@ class GoalDao {
             filename: dbFilepath,
             autoload: true,
         });
-        console.log()
         //Set tracker id to find their associated goals
     }
 
