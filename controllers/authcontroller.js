@@ -8,6 +8,7 @@ exports.googleAuth = passport.authenticate("google", {
   scope: ["profile", "email"],
 });
 
+//dd
 //Local login (email and pass)
 exports.localAuth = passport.authenticate("local", {
   successRedirect: "/user/",

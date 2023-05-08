@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path");
-const publicController = require(path.resolve(__dirname, "../controllers/publicController.js"));
+const publicController = require("../controllers/publicController.js");
 
 //public routes
 router.get("/", publicController.landing_page);
