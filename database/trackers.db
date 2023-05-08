@@ -4,3 +4,5 @@
 {"userId":"Yuq3ePNK44n4nGXo","metric":"weight","category":"Fitness","type":"chart","units":"kg","entries":[{"date":"2023-05-12","value":44},{"date":"2023-05-26","value":66}],"_id":"US2ejVzE4v78QnIA"}
 {"userId":"YpPDUCZ8Y3UfM9pC","metric":"Weight","category":"Fitness","type":"chart","units":"kg","entries":[{"date":"2023-05-17","value":44},{"date":"2023-05-01","value":33},{"date":"2023-05-26","value":69}],"_id":"Udk5ZRPnzYc8Ub29"}
 {"userId":"YpPDUCZ8Y3UfM9pC","metric":"Holiday","category":"Lifestyle","type":"goallist","units":"","entries":[],"_id":"h1mgrmlAKvghxvOd"}
+{"userId":"BoiyiGRS1J4uuZX4","metric":"fdsf","category":"Nutrition and Diet","type":"chart","units":"f","entries":[],"_id":"clOCK0K7JqAozFvn"}
+{"userId":"BoiyiGRS1J4uuZX4","metric":"dsd","category":"Nutrition and Diet","type":"progress","units":"dd","entries":[],"_id":"TUqFbj3twp0Ok9jQ"}
