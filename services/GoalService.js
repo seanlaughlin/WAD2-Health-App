@@ -17,7 +17,7 @@ class GoalService {
     }
 
     async getGoalsAndTrackers() {
-        const trackerDao = new TrackerDao(path.resolve(__dirname, './database/trackers.db'));
+        const trackerDao = new TrackerDao(path.resolve(__dirname, '../database/trackers.db'));
         //Set dao user id's to use in locating objects
         trackerDao.setUserId(this.userId);
         const goals = await this.goalDao.findAll();
